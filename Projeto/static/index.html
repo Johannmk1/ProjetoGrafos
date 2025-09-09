@@ -2,12 +2,41 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Mapa - Dijkstra</title>
+  <title>Mapa de Grafos - Trabalho de Faculdade</title>
   <link rel="stylesheet" href="/static/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"></script>
 </head>
 <body>
-  <h1>Menor Caminho - Algoritmo de Dijkstra</h1>
+
+<header>
+  <h1>Visualizador de Grafos & Algoritmo de Dijkstra</h1>
+  <p>Este projeto foi desenvolvido como trabalho da faculdade para mostrar grafos, conceitos de teoria dos grafos e o cálculo do menor caminho usando o algoritmo de Dijkstra. Experimente interagir com o grafo!</p>
+</header>
+
+<section>
+  <h2>Sobre o Projeto</h2>
+  <p>O site permite visualizar grafos com vértices e arestas e calcular o caminho mais curto entre dois pontos usando seu próprio algoritmo de Dijkstra implementado em Python. O grafo é carregado de um banco de dados ou pode ser pré-definido em memória.</p>
+  <p>O visual é feito com a biblioteca Cytoscape.js, proporcionando uma experiência interativa e intuitiva para explorar o grafo.</p>
+</section>
+
+<section>
+  <h2>Conceitos de Grafos</h2>
+  <ul>
+    <li><b>Vértices (nós):</b> representam pontos ou entidades do grafo.</li>
+    <li><b>Arestas:</b> representam conexões entre vértices, podendo ter pesos (distância, custo, tempo).</li>
+    <li><b>Grafo não-direcionado:</b> as conexões não possuem direção.</li>
+    <li><b>Algoritmo de Dijkstra:</b> encontra o caminho mais curto entre um vértice inicial e final.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Como Usar</h2>
+  <ol>
+    <li>Selecione o vértice de <b>início</b> e <b>fim</b>.</li>
+    <li>Clique em <b>Calcular</b>.</li>
+    <li>O caminho mais curto será exibido abaixo e destacado no grafo.</li>
+    <li>Experimente diferentes combinações de vértices e explore o grafo interativamente.</li>
+  </ol>
 
   <div class="form">
     <label>Início: <select id="inicio"></select></label>
@@ -16,8 +45,17 @@
   </div>
 
   <div id="resultado"></div>
-  <div id="cy"></div>
+</section>
 
-  <script src="/static/script.js"></script>
+<section>
+  <h2>Visualização do Grafo</h2>
+  <div id="cy"></div>
+</section>
+
+<footer>
+  <p>Desenvolvido para um trabalho de faculdade. Criado por Johann Malkowski e Raíssa Sofka Mazzi. © 2025</p>
+</footer>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

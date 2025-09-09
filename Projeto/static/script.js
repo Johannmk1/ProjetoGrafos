@@ -6,9 +6,31 @@ function desenharGrafo(data) {
     container: document.getElementById("cy"),
     elements: [...data.nodes, ...data.edges],
     style: [
-      { selector: "node", style: { "content": "data(label)", "background-color": "#61bffc", "color": "#000" }},
-      { selector: "edge", style: { "label": "data(weight)", "width": 2, "line-color": "#ccc", "curve-style": "bezier" }},
-      { selector: ".highlighted", style: { "line-color": "red", "width": 4 }}
+      { selector: "node", style: { 
+          "content": "data(label)", 
+          "background-color": "#61bffc", 
+          "color": "#000",
+          "text-valign": "center",
+          "text-halign": "center",
+          "font-size": 14,
+          "width": 45,
+          "height": 45,
+          "border-width": 2,
+          "border-color": "#1f3a93"
+      }},
+      { selector: "edge", style: { 
+          "label": "data(weight)", 
+          "width": 3, 
+          "line-color": "#ccc", 
+          "curve-style": "bezier",
+          "font-size": 12,
+          "text-background-color": "#fff",
+          "text-background-opacity": 0.8
+      }},
+      { selector: ".highlighted", style: { 
+          "line-color": "#e74c3c", 
+          "width": 5 
+      }}
     ],
     layout: { name: "cose" }
   });
@@ -19,7 +41,6 @@ function carregarGrafo() {
     .then(res => res.json())
     .then(data => {
       vertices = data.nodes.map(n => n.data.id);
-
       const inicioSelect = document.getElementById("inicio");
       const fimSelect = document.getElementById("fim");
       inicioSelect.innerHTML = "";
@@ -28,7 +49,6 @@ function carregarGrafo() {
         inicioSelect.innerHTML += `<option value="${v}">${v}</option>`;
         fimSelect.innerHTML += `<option value="${v}">${v}</option>`;
       });
-
       desenharGrafo(data);
     });
 }
@@ -48,8 +68,9 @@ function calcular() {
       `<p><b>Distância:</b> ${data.distancia}</p>
        <p><b>Caminho:</b> ${data.caminho}</p>`;
 
+    if (!cy) return;
     cy.elements().removeClass("highlighted");
-    const path = data.caminho.split("->");
+    const path = data.caminho.split("->").filter(Boolean);
     for (let i = 0; i < path.length - 1; i++) {
       cy.edges().filter(e =>
         (e.data("source") === path[i] && e.data("target") === path[i+1]) ||

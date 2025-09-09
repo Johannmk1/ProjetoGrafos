@@ -1,5 +1,4 @@
 from Conexao import Conexao
-from visualizar import desenhar_grafo 
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
