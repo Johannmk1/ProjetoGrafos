@@ -7,7 +7,7 @@ class Graph:
     def add_edge(self, u, v, weight):
         if 0 <= u < self.size and 0 <= v < self.size:
             self.adj_matrix[u][v] = weight
-            self.adj_matrix[v][u] = weight  # For undirected graph
+            self.adj_matrix[v][u] = weight  
 
     def add_vertex_data(self, vertex, data):
         if 0 <= vertex < self.size:
@@ -30,12 +30,9 @@ class Graph:
                     u = i
 
             if u is None or u == end_vertex:
-              #  print(f"Breaking out of loop. Current vertex: {self.vertex_data[u]}")
-              #  print(f"Distances: {distances}")
                 break
 
             visited[u] = True
-           # print(f"Visited vertex: {self.vertex_data[u]}")
 
             for v in range(self.size):
                 if self.adj_matrix[u][v] != 0 and not visited[v]:
@@ -55,4 +52,4 @@ class Graph:
             if current == self.vertex_data.index(start_vertex):
                 path.insert(0, start_vertex)
                 break
-        return '->'.join(path)  # Join the vertices with '->'
+        return '->'.join(path)
