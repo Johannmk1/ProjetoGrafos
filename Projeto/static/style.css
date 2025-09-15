@@ -13,20 +13,47 @@ body {
 header {
   background-color: #1f3a93;
   color: #fff;
-  padding: 60px 20px;
+  padding: 10px 40px;
   text-align: center;
-}
-header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-}
-header p {
-  font-size: 1.2em;
-  max-width: 700px;
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-section {
+.menu {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+.menu:hover {
+  background-color: #fff;
+  color:#1f3a93;
+  border-radius: 5px;
+}
+
+.inicio {
+  font-size: larger;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 600px;
+  padding: 120px 200px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-image: url("/static/img/fundo6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.inicio h2 {
+  font-size: xx-large;
+}
+
+.conteudo {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
@@ -45,6 +72,18 @@ section p, section li {
 ul, ol {
   margin-left: 20px;
   margin-bottom: 15px;
+}
+
+.texto_img {
+  display: flex;
+  justify-content: space-between;
+}
+
+img {
+  max-width: 50%;
+  height: auto;   
+  display: block; 
+  margin: 10px;
 }
 
 .form {
@@ -110,7 +149,6 @@ footer {
   background-color: #1f3a93;
   color: #fff;
   margin-top: 50px;
-  border-radius: 12px;
 }
 footer p {
   font-size: 1em;

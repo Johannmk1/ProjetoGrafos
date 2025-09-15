@@ -9,27 +9,188 @@
 <body>
 
 <header>
-  <h1>Visualizador de Grafos & Algoritmo de Dijkstra</h1>
-  <p>Este projeto foi desenvolvido como trabalho da faculdade para mostrar grafos, conceitos de teoria dos grafos e o cálculo do menor caminho usando o algoritmo de Dijkstra. Experimente interagir com o grafo!</p>
+  <h1 class="tituloCabecaolho">Grafos</h1>
+  <a href="#conceito" class="menu">Conceito</a>
+  <a href="#historia" class="menu">História</a>
+  <a href="#tipos" class="menu">Tipos</a>
+  <a href="#regras" class="menu">Regras</a>
+  <a href="#exemplos" class="menu">Exemplos</a>
+  <a href="#algoritmos" class="menu">Algoritmos</a>
+  <a href="#curiosidade" class="menu">Curiosidade</a>
+  <a href="#pratica" class="menu">Prática</a>
 </header>
 
-<section>
-  <h2>Sobre o Projeto</h2>
-  <p>O site permite visualizar grafos com vértices e arestas e calcular o caminho mais curto entre dois pontos usando seu próprio algoritmo de Dijkstra implementado em Python. O grafo é carregado de um banco de dados ou pode ser pré-definido em memória.</p>
-  <p>O visual é feito com a biblioteca Cytoscape.js, proporcionando uma experiência interativa e intuitiva para explorar o grafo.</p>
+<section class="inicio">
+  <h2>Teoria e prática sobre Grafos & Algoritmo de Dijkstra</h2>
+  <p>Apreanda conceitos de teoria dos grafos e o cálculo do menor caminho usando o algoritmo de Dijkstra. Entenda sobre a teoria e experimente interagir com nosso grafo!</p>
 </section>
 
-<section>
-  <h2>Conceitos de Grafos</h2>
+<section class="conteudo" id="conceito">
+  <h2>Conceito</h2>
+  <p>Um grafo é uma estrutura matemática e computacional que serve para representar relações e conexões entre diferentes elementos.</br>Ele é composto por dois componentes básicos:</p>
   <ul>
-    <li><b>Vértices (nós):</b> representam pontos ou entidades do grafo.</li>
-    <li><b>Arestas:</b> representam conexões entre vértices, podendo ter pesos (distância, custo, tempo).</li>
-    <li><b>Grafo não-direcionado:</b> as conexões não possuem direção.</li>
-    <li><b>Algoritmo de Dijkstra:</b> encontra o caminho mais curto entre um vértice inicial e final.</li>
+    <li>Vértices (ou nós): representam os objetos ou entidades do sistema.</li>
+    <li>Arestas (ou ligações): representam as conexões ou relações entre esses objetos.</li>
   </ul>
+  <p>Essa estrutura pode ser aplicada a praticamente qualquer situação em que haja elementos interconectados.</br>Por exemplo:</p>
+  <ul>
+    <li>Em um mapa de cidades, os vértices são as cidades e as arestas são as estradas que as ligam.</li>
+    <li>Em uma rede social, cada pessoa é um vértice, e a amizade entre duas pessoas é uma aresta.</li>
+    <li>Em computação em redes, computadores e roteadores são vértices, enquanto os cabos ou sinais sem fio são as arestas.</li>
+  </ul>
+  <p>Um grafo pode ser simples, quando não possui múltiplas arestas entre os mesmos vértices, ou complexo, quando inclui pesos (custos), direções, ou múltiplas ligações.</br>Graças a essa flexibilidade, os grafos são uma ferramenta poderosa para modelar e resolver problemas do mundo real.</p>
 </section>
 
-<section>
+<section class="conteudo" id="historia">
+  <h2>Breve História</h2>
+  <p>A origem da teoria dos grafos remonta ao século XVIII, com o matemático suíço Leonhard Euler.</p>
+  <p>O marco inicial foi o famoso Problema das Sete Pontes de Königsberg (1736).</p>
+  <p>Na cidade de Königsberg (hoje Kaliningrado, Rússia), havia dois grandes rios cortando a região e sete pontes conectando diferentes partes da cidade.</p>
+  <p>O desafio era simples de explicar, mas complexo de resolver:</p>
+  <div class="texto_img">
+    <div class="texto">
+      <p>É possível caminhar pela cidade atravessando cada ponte exatamente uma vez, sem repetir nenhuma?</p>
+      <p>Euler analisou o problema e demonstrou que não era possível.</br>Sua solução inovadora consistiu em abstrair o mapa da cidade em uma forma simplificada, onde as terras eram representadas como vértices e as pontes como arestas.</p>
+      <p>Esse raciocínio deu origem àquilo que chamamos hoje de Teoria dos Grafos.</br>A importância do trabalho de Euler foi tão grande que ele é considerado o pai da Matemática Discreta.</p>
+      <p>Atualmente, os grafos são aplicados em diversas áreas da ciência, tecnologia e engenharia, servindo como base para algoritmos, sistemas de transporte, redes de comunicação, biologia computacional e até inteligência artificial.</p>
+    </div>
+    <img src="/static/img/PontesKonigsberg.jpg" alt="Representação do Problema das Sete Pontes de Königsberg">
+  </div>
+</section>
+
+<section class="conteudo" id="tipos">
+  <h2>Tipos de Grafos</h2>
+  <p>Os grafos podem assumir diferentes formas e características, dependendo de como seus vértices e arestas se relacionam. Veja os principais tipos:</p>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Grafo Simples</h3>
+      <ul>
+        <li><b>Definição: </b>não possui arestas múltiplas entre os mesmos vértices e não contém laços (uma aresta que conecta um vértice a ele mesmo).</li>
+        <li><b>Exemplo: </b>um grupo de amigos em que cada amizade é representada apenas uma vez. Se João e Maria são amigos, não é necessário repetir essa ligação.</li>
+      </ul>
+    </div>
+    <img src="/static/img/Simples.jpg" alt="Representação do tipo de Grafo">
+  </div>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Multigrafo</h3>
+      <ul>
+        <li><b>Definição: </b>permite múltiplas arestas entre os mesmos vértices.</li>
+        <li><b>Exemplo: </b>no transporte público, duas cidades podem estar conectadas por várias linhas de ônibus diferentes. Cada linha pode ser representada como uma aresta adicional entre as mesmas cidades.</li>
+      </ul>
+    </div>
+    <img src="/static/img/MultiGrafos.jpg" alt="Representação do tipo de Grafo">
+  </div>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Grafo Direcionado (ou Dígrafo)</h3>
+      <ul>
+        <li><b>Definição: </b>as arestas têm uma direção, indicando que a relação vai de um vértice para outro, mas não necessariamente o contrário.</li>
+        <li><b>Exemplo: </b>no Twitter, se Ana segue Carlos, isso não significa que Carlos segue Ana. A relação tem direção.</li>
+      </ul>
+    </div>
+    <img src="/static/img/Dirigido.jpg" alt="Representação do tipo de Grafo">
+  </div>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Grafo Não Direcionado</h3>
+      <ul>
+        <li><b>Definição: </b>as arestas não têm direção, ou seja, a conexão é mútua.</li>
+        <li><b>Exemplo: </b>em uma rede de amizade do Facebook, se Ana é amiga de Carlos, então Carlos também é amigo de Ana.</li>
+      </ul>
+    </div>
+    <img src="/static/img/NaoDirigido.jpg" alt="Representação do tipo de Grafo">
+  </div>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Grafo Ponderado</h3>
+      <ul>
+        <li><b>Definição: </b>cada aresta possui um peso ou custo associado, que pode representar distância, tempo, preço ou qualquer valor numérico.</li>
+        <li><b>Exemplo: </b>em um mapa de estradas, as arestas podem ter como peso a quilometragem entre duas cidades.</li>
+      </ul>
+    </div>
+    <img src="/static/img/Ponderado.jpg" alt="Representação do tipo de Grafo">
+  </div>
+
+  <div class="texto_img">
+    <div class="texto">
+      <h3>Grafo Completo</h3>
+      <ul>
+        <li><b>Definição: </b>cada vértice está ligado a todos os outros vértices do grafo.</li>
+        <li><b>Exemplo: </b>em um grupo de 5 pessoas em que todos são amigos de todos, cada pessoa está conectada com as demais.</li>
+      </ul>
+    </div>
+    <img src="/static/img/Completo.jpg" alt="Representação do tipo de Grafo">
+  </div>
+</section>
+
+<section class="conteudo" id="regras">
+  <h2>Regras e Propriedades Básicas dos Grafos</h2>
+  <p>Para compreender melhor os grafos, é importante conhecer algumas regras fundamentais e propriedades matemáticas que definem seu funcionamento:</p>
+  <ol>
+    <li>Número de Vértices (|V|):
+      <ul>
+        <li>Um grafo sempre possui pelo menos 1 vértice.</li>
+        <li>Pode haver milhões de vértices em aplicações reais, como no caso das redes sociais.</li>
+      </ul>
+    </li>
+    <li>Arestas (|E|):
+      <ul>
+        <li>Uma aresta conecta dois vértices.</li>
+        <li>Pode ser um laço, quando conecta um vértice a ele mesmo.</li>
+      </ul>
+    </li>
+    <li>Grau de um Vértice:
+      <ul>
+        <li>É a quantidade de arestas que incidem sobre ele.</li>
+        <li>Em grafos não direcionados, é simplesmente o número de conexões.</li>
+        <li>Em grafos direcionados, temos:
+          <ul>
+            <li>Grau de entrada (in-degree): número de arestas que chegam ao vértice.</li>
+            <li>Grau de saída (out-degree): número de arestas que saem do vértice.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Grafos Conexos e Desconexos:
+      <ul>
+        <li>Conexo: existe pelo menos um caminho entre todos os pares de vértices.</li>
+        <li>Desconexo: há vértices isolados ou grupos de vértices que não têm ligação com os demais.</li>
+      </ul>
+    </li>
+    <li>Ciclos:
+      <ul>
+        <li>Ocorrem quando há um caminho que começa e termina no mesmo vértice.</li>
+        <li>Grafos sem ciclos são chamados de aciclos, como as árvores.</li>
+      </ul>
+    </li>
+    <li>Distância e Caminhos:
+      <ul>
+        <li>A distância entre dois vértices é o número mínimo de arestas necessárias para ligá-los.</li>
+        <li>O menor caminho é uma das aplicações mais importantes em grafos, usado em rotas e otimização.</li>
+      </ul>
+    </li>
+  </ol>
+</section>
+
+<section class="conteudo" id="exemplos">
+  <h2>Exemplos de Aplicação dos Grafos</h2>
+</section>
+
+<section class="conteudo" id="algoritmos">
+  <h2>Algoritmos Importantes em Grafos</h2>
+</section>
+
+<section class="conteudo" id="curiosidade">
+  <h2>Curiosidades sobre Grafos e Algoritmos</h2>
+</section>
+
+<section class="conteudo" id="pratica">
   <h2>Como Usar</h2>
   <ol>
     <li>Selecione o vértice de <b>início</b> e <b>fim</b>.</li>
@@ -47,7 +208,7 @@
   <div id="resultado"></div>
 </section>
 
-<section>
+<section class="conteudo">
   <h2>Visualização do Grafo</h2>
   <div id="cy"></div>
 </section>
