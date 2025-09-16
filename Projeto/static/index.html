@@ -9,7 +9,7 @@
 <body>
 
 <header>
-  <h1 class="tituloCabecaolho">Grafos</h1>
+  <h1><a href="#topo" class="tituloCabecaolho">Grafos</a></h1>
   <a href="#conceito" class="menu">Conceito</a>
   <a href="#historia" class="menu">História</a>
   <a href="#tipos" class="menu">Tipos</a>
@@ -20,7 +20,7 @@
   <a href="#pratica" class="menu">Prática</a>
 </header>
 
-<section class="inicio">
+<section class="inicio" id="topo">
   <h2>Teoria e prática sobre Grafos & Algoritmo de Dijkstra</h2>
   <p>Apreanda conceitos de teoria dos grafos e o cálculo do menor caminho usando o algoritmo de Dijkstra. Entenda sobre a teoria e experimente interagir com nosso grafo!</p>
 </section>
@@ -133,13 +133,13 @@
   <h2>Regras e Propriedades Básicas dos Grafos</h2>
   <p>Para compreender melhor os grafos, é importante conhecer algumas regras fundamentais e propriedades matemáticas que definem seu funcionamento:</p>
   <ol>
-    <li>Número de Vértices (|V|):
+    <li>Número de Vértices (V):
       <ul>
         <li>Um grafo sempre possui pelo menos 1 vértice.</li>
         <li>Pode haver milhões de vértices em aplicações reais, como no caso das redes sociais.</li>
       </ul>
     </li>
-    <li>Arestas (|E|):
+    <li>Arestas (E):
       <ul>
         <li>Uma aresta conecta dois vértices.</li>
         <li>Pode ser um laço, quando conecta um vértice a ele mesmo.</li>
@@ -180,24 +180,112 @@
 
 <section class="conteudo" id="exemplos">
   <h2>Exemplos de Aplicação dos Grafos</h2>
+  <p>Os grafos não ficam apenas na teoria; eles estão presentes em inúmeras áreas da vida real e da tecnologia:</p>
+  <ul>
+    <li>Mapas e Rotas:
+      <ul>
+        <li>Encontrar o menor caminho entre cidades (ex.: Google Maps, Waze).</li>
+        <li>Exemplo: calcular a rota mais rápida entre dois pontos considerando o trânsito.</li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>Redes Sociais:
+      <ul>
+        <li>Usuários são vértices; amizades ou seguidores são as arestas.</li>
+        <li>Exemplo: no Facebook, a relação é não direcionada (amizade mútua).</li>
+        <li>No Instagram/Twitter, a relação é direcionada (seguir alguém não implica ser seguido).</li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>Computação em Redes:
+      <ul>
+        <li>Computadores e servidores são nós; cabos, roteadores ou conexões Wi-Fi são arestas.
+</li>
+        <li>Exemplo: a Internet pode ser representada como um enorme grafo global.</li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>Biologia:
+      <ul>
+        <li>Grafos descrevem cadeias alimentares, redes metabólicas e interações genéticas.</li>
+        <li>Exemplo: em uma cadeia alimentar, os animais são vértices e as relações de "quem come quem" são as arestas.
+</li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>Engenharia:
+      <ul>
+        <li>Circuitos elétricos podem ser modelados como grafos.</li>
+        <li>Exemplo: cada componente (resistor, capacitor, fonte) é um vértice e os fios que os conectam são as arestas.</li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li>Ciência de Dados e IA:
+      <ul>
+        <li>Grafos ajudam a analisar conexões complexas, como em recomendações da Netflix ou em sistemas antifraude bancária.</li>
+      </ul>
+    </li>
+  </ul>
 </section>
 
 <section class="conteudo" id="algoritmos">
   <h2>Algoritmos Importantes em Grafos</h2>
+  <p>A teoria dos grafos não se resume apenas a desenhar vértices e arestas. Para resolver problemas do mundo real, usamos algoritmos específicos, cada um com sua finalidade:</p>
+  
+  <h3>Busca em Largura (BFS - Breadth-First Search)</h3>
+  <ul>
+    <li><b>Como funciona: </b>percorre o grafo camada por camada, visitando todos os vizinhos de um vértice antes de avançar para a próxima "camada".</li>
+    <li><b>Exemplo: </b>imagine uma pedra jogada em um lago. As ondas se expandem em círculos: primeiro o ponto mais próximo, depois os mais distantes.
+</li>
+    <li><b>Aplicação: </b>encontrar o menor número de passos para chegar de um ponto a outro em jogos ou mapas.</li>
+  </ul>
+
+  <h3>Busca em Profundidade (DFS – Depth-First Search)</h3>
+  <ul>
+    <li><b>Como funciona: </b>vai "cavando" profundamente em uma direção até não poder mais avançar, então retorna e tenta outros caminhos.</li>
+    <li><b>Exemplo: </b>como explorar um labirinto sempre escolhendo um corredor até o fim, e só depois voltando atrás.</li>
+    <li><b>Aplicação: </b>verificar se há ciclos em um grafo ou explorar todas as possibilidades em jogos de tabuleiro como xadrez.</li>
+  </ul>
+
+  <h3>Algoritmo de Dijkstra</h3>
+  <ul>
+    <li><b>Como funciona: </b>calcula o menor caminho entre dois vértices em um grafo ponderado (com pesos). Ele vai expandindo rotas mais baratas primeiro, até chegar ao destino.</li>
+    <li><b>Exemplo: </b>encontrar a rota mais rápida em um mapa de cidades levando em conta a distância.</li>
+    <li><b>Aplicação: </b>sistemas de navegação (Google Maps, Waze, GPS de carros) e logística de entregas (iFood, Uber Eats).</li>
+  </ul>
 </section>
 
 <section class="conteudo" id="curiosidade">
   <h2>Curiosidades sobre Grafos e Algoritmos</h2>
+  <ul>
+    <li>O Algoritmo de Dijkstra foi criado em 1956, em apenas 20 minutos, segundo o próprio Edsger Dijkstra, enquanto esperava sua esposa em um café.</li>
+    <li>O Google PageRank (que revolucionou a internet nos anos 2000) foi baseado em teoria dos grafos: cada página é um vértice e cada link é uma aresta.</li>
+    <li>A Internet é o maior grafo já existente, conectando bilhões de computadores e dispositivos no mundo.</li>
+    <li>Jogos como xadrez, dama e até RPGs digitais podem ser modelados como grafos de posições e movimentos possíveis.</li>
+    <li>Em biologia, grafos ajudam a mapear conexões do cérebro humano (a chamada connectome), redes de proteínas e cadeias alimentares.</li>
+  </ul>
 </section>
 
 <section class="conteudo" id="pratica">
-  <h2>Como Usar</h2>
-  <ol>
-    <li>Selecione o vértice de <b>início</b> e <b>fim</b>.</li>
-    <li>Clique em <b>Calcular</b>.</li>
-    <li>O caminho mais curto será exibido abaixo e destacado no grafo.</li>
-    <li>Experimente diferentes combinações de vértices e explore o grafo interativamente.</li>
-  </ol>
+  <div class="contexto">
+    <h2>Vamos à Prática</h2>
+    <p>blablablabla</p>
+  </div>
+
+  <div class="comousar">
+    <h2>Como Usar</h2>
+    <ol>
+      <li>Selecione o vértice de <b>início</b> e <b>fim</b>.</li>
+      <li>Clique em <b>Calcular</b>.</li>
+      <li>O caminho mais curto será exibido abaixo e destacado no grafo.</li>
+      <li>Experimente diferentes combinações de vértices e explore o grafo interativamente.</li>
+    </ol>
+  </div>
 
   <div class="form">
     <label>Início: <select id="inicio"></select></label>
@@ -206,11 +294,50 @@
   </div>
 
   <div id="resultado"></div>
-</section>
 
-<section class="conteudo">
-  <h2>Visualização do Grafo</h2>
   <div id="cy"></div>
+
+  <div class="cidades">
+    <div class="cid">
+      <p>(AGL) Agrolândia</p>
+      <p>(AGN) Agronômica</p>
+      <p>(ATA) Atalanta</p>
+      <p>Aurora (AUR)</p>
+      <p>(BRA) Braço do Trombudo</p>
+    </div>
+    <div class="cid">
+      <p>(CHA) Chapadão do Lageado</p>
+      <p>(DON) Dona Emma</p>
+      <p>(GET) Presidente Getúlio</p>
+      <p>(IBI) Ibirama</p>
+      <p>(ITU) Ituporanga</p>
+    </div>
+    <div class="cid">
+      <p>(JOS) José Boiteux</p>
+      <p>(LAU) Lauretino</p>
+      <p>(LON) Lontras</p>
+      <p>(MIR) Mirim Doce</p>
+      <p>(NER) Presidente Nereu</p>
+    </div>
+    <div class="cid">
+      <p>(PET) Petrolândia</p>
+      <p>(POU) Pouso Redondo</p>
+      <p>(RDC) Rio do Campo</p>
+      <p>(RDO) Rio do Oeste</p>
+    </div>
+    <div class="cid">
+      <p>(RDS) Rio do Sul</p>
+      <p>(SAL) Salete</p>
+      <p>(TAI) Taió</p>
+      <p>(TER) Santa Terezinha</p>
+    </div>
+    <div class="cid">
+      <p>(TRO) Trombudo Centrar</p>
+      <p>(VID) Vidal Ramos</p>
+      <p>(VIT) Vitor Meireles</p>
+      <p>(WIT) Witmarsum</p>
+    </div>
+  </div>
 </section>
 
 <footer>

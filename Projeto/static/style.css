@@ -18,6 +18,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: fixed;  
+  top: 0;            
+  left: 0;
+  width: 100%;
+
+  background: rgba(31, 58, 147, 0.95); 
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.tituloCabecaolho {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.tituloCabecaolho:hover {
+  text-shadow: 2px 3px #617cb6;
 }
 
 .menu {
@@ -25,12 +44,23 @@ header {
   font-weight: bold;
   color: #fff;
   padding: 5px 10px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.menu:hover {
-  background-color: #fff;
-  color:#1f3a93;
-  border-radius: 5px;
+.menu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.menu:hover::after {
+  width: 100%;
 }
 
 .inicio {
@@ -40,13 +70,14 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 600px;
+  min-height: 100vh;
   padding: 120px 200px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   background-image: url("/static/img/fundo6.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  scroll-margin-top: 80px;
 }
 
 .inicio h2 {
@@ -57,14 +88,24 @@ header {
   max-width: 1200px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  /*box-shadow: 0 4px 15px rgba(0,0,0,0.1);*/
+  scroll-margin-top: 80px;
 }
+
 section h2 {
-  color: #1f3a93;
   margin-bottom: 15px;
+  color: #1f3a93;
+  font-size: 2em;
+  display: inline-block;
+  padding-bottom: 5px;
 }
+
+section h3 {
+  margin-top: 10px;
+}
+
 section p, section li {
   font-size: 1em;
 }
@@ -86,6 +127,17 @@ img {
   margin: 10px;
 }
 
+img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+
 .form {
   display: flex;
   justify-content: center;
@@ -104,10 +156,12 @@ select {
   font-size: 1em;
   transition: 0.2s all;
 }
+
 select:focus {
   border-color: #1f3a93;
   outline: none;
 }
+
 button {
   padding: 12px 25px;
   background-color: #1f3a93;
@@ -119,9 +173,15 @@ button {
   transition: 0.3s all;
   font-weight: 600;
 }
+
 button:hover {
   background-color: #3b5998;
-  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(59, 89, 152, 0.6);
+  transform: translateY(-2px) scale(1.02);
+}
+
+#pratica {
+  background-color: #f4f6f8;
 }
 
 #resultado {
@@ -138,9 +198,21 @@ button:hover {
   height: 600px;
   margin: 30px auto;
   border-radius: 12px;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background-color: #f9f9f9;
+  border: 1px solid #f1f0f0;
+  box-shadow: 0 4px 15px rgba(168, 168, 168, 0.1);
+}
+
+.cidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 25px;
+}
+
+.cid {
+  font-size: small;
+  color: #3b5998;
 }
 
 footer {
