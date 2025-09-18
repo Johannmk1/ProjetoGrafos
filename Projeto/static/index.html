@@ -17,7 +17,7 @@
   <a href="#exemplos" class="menu">Exemplos</a>
   <a href="#algoritmos" class="menu">Algoritmos</a>
   <a href="#curiosidade" class="menu">Curiosidade</a>
-  <a href="#pratica" class="menu">Prática</a>
+  <a href="#pratica" class="menu" id="btnPratica">Prática</a>
 </header>
 
 <section class="inicio" id="topo">
@@ -274,9 +274,525 @@
 <section class="conteudo" id="pratica">
   <div class="contexto">
     <h2>Vamos à Prática</h2>
-    <p>blablablabla</p>
+    <p>Para exemplificar o conteúdo, abaixo segue um grafo que representa as 27 cidades do Auto Vale (Legenda das siglas no final) e as estradas fictícias que as ligam.</p>
+    <p>O grafo em questão é não dirigido e ponderado, ou seja, as estradas seguem ambos os sentidos e possuem pesos, os quais foram criados apartir da tabela abaixo, onde são considerados os valores fictícios de distância, qualidade e tipo da estrada.</p>
   </div>
 
+  <div class="tabela">
+    <table>
+      <tr>
+        <th>Estrada</th>
+        <th>Cidades</th>
+        <th>Distância</th>
+        <th>Qualidade</th>
+        <th>Valor</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th>Peso</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>AGL - CHA</td>
+        <td>21</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>64,26</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>AUR - ITU</td>
+        <td>13</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>16,90</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>JOS - TAI</td>
+        <td>2</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>2,00</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>AGN - SAL</td>
+        <td>21</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>47,25</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>BRA - POU</td>
+        <td>25</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>55,25</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>AUR - PET</td>
+        <td>10</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>18,00</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>ATA - JOS</td>
+        <td>17</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>30,60</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>AGN - JOS</td>
+        <td>10</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>22,50</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>AUR - NER</td>
+        <td>9</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>11,70</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>ATA - LON</td>
+        <td>4</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>6,80</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>AUR - LON</td>
+        <td>14</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>14,00</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>AUR - TAI</td>
+        <td>6</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>10,20</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>AUR - IBI</td>
+        <td>6</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>7,80</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>DON - LON</td>
+        <td>17</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>22,10</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>MIR - VID</td>
+        <td>8</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>14,40</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>BRA - TRO</td>
+        <td>8</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>17,68</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>GET - RDS</td>
+        <td>10</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>12,50</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>DON - RDO</td>
+        <td>1</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>3,06</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>CHA - MIR</td>
+        <td>25</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>40,63</td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>BRA - MIR</td>
+        <td>18</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>23,40</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>DON - RDC</td>
+        <td>12</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>36,72</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>CHA - PET</td>
+        <td>23</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>39,10</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>DON - PET</td>
+        <td>5</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>11,05</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>DON - VID</td>
+        <td>3</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>5,40</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>BRA - NER</td>
+        <td>7</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>8,75</td>
+      </tr>
+      <tr>
+        <td>26</td>
+        <td>CHA - NER</td>
+        <td>13</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>21,13</td>
+      </tr>
+      <tr>
+        <td>27</td>
+        <td>CHA - TRO</td>
+        <td>6</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>6,00</td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td>CHA - JOS</td>
+        <td>9</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>15,30</td>
+      </tr>
+      <tr>
+        <td>29</td>
+        <td>IBI - NER</td>
+        <td>16</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>20,00</td>
+      </tr>
+      <tr>
+        <td>30</td>
+        <td>PET - WIT</td>
+        <td>7</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>15,75</td>
+      </tr>
+      <tr>
+        <td>31</td>
+        <td>DON - TAI</td>
+        <td>21</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>27,30</td>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td>ITU - TAI</td>
+        <td>13</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>21,13</td>
+      </tr>
+      <tr>
+        <td>33</td>
+        <td>IBI - SAL</td>
+        <td>13</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>22,10</td>
+      </tr>
+      <tr>
+        <td>34</td>
+        <td>GET - PET</td>
+        <td>21</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>64,26</td>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>DON - TER</td>
+        <td>18</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>23,40</td>
+      </tr>
+      <tr>
+        <td>36</td>
+        <td>IBI - RDS</td>
+        <td>6</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>6,00</td>
+      </tr>
+      <tr>
+        <td>37</td>
+        <td>GET - RDC</td>
+        <td>23</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>39,10</td>
+      </tr>
+      <tr>
+        <td>38</td>
+        <td>AGL - RDC</td>
+        <td>1</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>1,00</td>
+      </tr>
+      <tr>
+        <td>39</td>
+        <td>DON - WIT</td>
+        <td>24</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>43,20</td>
+      </tr>
+      <tr>
+        <td>40</td>
+        <td>LAU - TER</td>
+        <td>25</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>40,63</td>
+      </tr>
+      <tr>
+        <td>41</td>
+        <td>RDO - VIT</td>
+        <td>6</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>10,20</td>
+      </tr>
+      <tr>
+        <td>42</td>
+        <td>LAU - SAL</td>
+        <td>12</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>19,50</td>
+      </tr>
+      <tr>
+        <td>43</td>
+        <td>AGN - BRA</td>
+        <td>2</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>2,00</td>
+      </tr>
+      <tr>
+        <td>44</td>
+        <td>AGL - LON</td>
+        <td>5</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>6,25</td>
+      </tr>
+      <tr>
+        <td>45</td>
+        <td>ATA - RDC</td>
+        <td>8</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Calçamento</td>
+        <td>1,3</td>
+        <td>17,68</td>
+      </tr>
+      <tr>
+        <td>46</td>
+        <td>GET - JOS</td>
+        <td>15</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>15,00</td>
+      </tr>
+      <tr>
+        <td>47</td>
+        <td>LAU - WIT</td>
+        <td>16</td>
+        <td>Boa</td>
+        <td>1,25</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>36,00</td>
+      </tr>
+      <tr>
+        <td>48</td>
+        <td>NER - TAI</td>
+        <td>16</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>16,00</td>
+      </tr>
+      <tr>
+        <td>49</td>
+        <td>AGL - POU</td>
+        <td>15</td>
+        <td>Ruim</td>
+        <td>1,7</td>
+        <td>Asfalto</td>
+        <td>1</td>
+        <td>25,50</td>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>ATA - RDS</td>
+        <td>11</td>
+        <td>Ótima</td>
+        <td>1</td>
+        <td>Chão</td>
+        <td>1,8</td>
+        <td>19,80</td>
+      </tr>
+    </table>
+  </div>
+    
   <div class="comousar">
     <h2>Como Usar</h2>
     <ol>

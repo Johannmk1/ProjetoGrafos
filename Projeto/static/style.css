@@ -13,7 +13,7 @@ body {
 header {
   background-color: #1f3a93;
   color: #fff;
-  padding: 10px 40px;
+  padding: 10px 50px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -61,6 +61,13 @@ header {
 
 .menu:hover::after {
   width: 100%;
+}
+
+#btnPratica {
+  background-color: #fff;
+  border-radius: 8px;
+  color: #1f3a93;
+  padding: 8px 15px;
 }
 
 .inicio {
@@ -137,6 +144,39 @@ img:hover {
   transform: scale(1.03);
 }
 
+#pratica {
+  background-color: #f4f6f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px;
+}
+
+.contexto {
+  max-width: 800px;
+  text-align: justify;
+}
+
+.tabela {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: fit-content;
+  margin: 40px;
+}
+
+table {
+  border: solid #1f3a93;
+  border-width: 1.6px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #617cb6;
+  min-width: 80px;
+  padding: 8px;
+}
 
 .form {
   display: flex;
@@ -146,9 +186,11 @@ img:hover {
   flex-wrap: wrap;
   margin-bottom: 25px;
 }
+
 label {
   font-weight: 500;
 }
+
 select {
   padding: 10px 14px;
   border-radius: 6px;
@@ -178,10 +220,6 @@ button:hover {
   background-color: #3b5998;
   box-shadow: 0 0 12px rgba(59, 89, 152, 0.6);
   transform: translateY(-2px) scale(1.02);
-}
-
-#pratica {
-  background-color: #f4f6f8;
 }
 
 #resultado {
@@ -222,6 +260,7 @@ footer {
   color: #fff;
   margin-top: 50px;
 }
+
 footer p {
   font-size: 1em;
 }
