@@ -27,6 +27,8 @@ header {
   background: rgba(31, 58, 147, 0.95); 
   backdrop-filter: blur(6px);
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+
+  z-index: 1000;
 }
 
 .tituloCabecaolho {
@@ -161,8 +163,9 @@ img:hover {
   max-height: 300px;
   overflow-y: auto;
   overflow-x: auto;
-  max-width: fit-content;
+  max-width: 1000px;
   margin: 40px;
+  border: solid #617cb6;
 }
 
 table {

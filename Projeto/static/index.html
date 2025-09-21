@@ -236,7 +236,7 @@
 <section class="conteudo" id="algoritmos">
   <h2>Algoritmos Importantes em Grafos</h2>
   <p>A teoria dos grafos não se resume apenas a desenhar vértices e arestas. Para resolver problemas do mundo real, usamos algoritmos específicos, cada um com sua finalidade:</p>
-  
+
   <h3>Busca em Largura (BFS - Breadth-First Search)</h3>
   <ul>
     <li><b>Como funciona: </b>percorre o grafo camada por camada, visitando todos os vizinhos de um vértice antes de avançar para a próxima "camada".</li>
@@ -275,7 +275,7 @@
   <div class="contexto">
     <h2>Vamos à Prática</h2>
     <p>Para exemplificar o conteúdo, abaixo segue um grafo que representa as 27 cidades do Auto Vale (Legenda das siglas no final) e as estradas fictícias que as ligam.</p>
-    <p>O grafo em questão é não dirigido e ponderado, ou seja, as estradas seguem ambos os sentidos e possuem pesos, os quais foram criados apartir da tabela abaixo, onde são considerados os valores fictícios de distância, qualidade e tipo da estrada.</p>
+    <p>O grafo em questão é não dirigido e é ponderado, ou seja, as estradas seguem ambos os sentidos e possuem pesos, os quais foram criados apartir da tabela abaixo, onde são considerados os valores fictícios de distância, qualidade e tipo da estrada.</p>
   </div>
 
   <div class="tabela">
@@ -792,7 +792,139 @@
       </tr>
     </table>
   </div>
-    
+
+  <div class="contexto">
+    <h2>Representações de grafos</h2>
+    <p>Existem algumas maneiras de representar um grafo, dentre elas estão:</p>
+    <ul>
+      <li>Matriz de Incidência</li>
+      <li>Matriz de Adjacência</li>
+      <li>Estrutura de Adjacência</li>
+      <li>Lista de Arestas</li>
+      <li>Grafo Interativo</li>
+    </ul>
+
+    <h3>Matriz de Incidência</h3>
+    <p>A matriz de <b>incidência</b> é uma representação visual que relaciona os vértices com suas aresta, no exemplo constas a linhas das ciadades e as colunas das estradas, o número "1" indica as duas cidades que são ligadas pela estrada correspondente à coluna.</p>
+    <div class="tabela">
+      <table>
+        <tr>
+          <th>Cid/Rod</th>
+          <th>Rod 1</th>
+          <th>Rod 2</th>
+          <th>Rod 3</th>
+          <th>Rod 4</th>
+          <th>Rod 5</th>
+          <th>Rod 6</th>
+          <th>Rod 7</th>
+          <th>Rod 8</th>
+          <th>Rod 9</th>
+          <th>Rod 10</th>
+          <th>Rod 11</th>
+          <th>Rod 12</th>
+          <th>Rod 13</th>
+          <th>Rod 14</th>
+          <th>Rod 15</th>
+          <th>Rod 16</th>
+          <th>Rod 17</th>
+          <th>Rod 18</th>
+          <th>Rod 19</th>
+          <th>Rod 20</th>
+          <th>Rod 21</th>
+          <th>Rod 22</th>
+          <th>Rod 23</th>
+          <th>Rod 24</th>
+          <th>Rod 25</th>
+          <th>Rod 26</th>
+          <th>Rod 27</th>
+          <th>Rod 28</th>
+          <th>Rod 29</th>
+          <th>Rod 30</th>
+          <th>Rod 31</th>
+          <th>Rod 32</th>
+          <th>Rod 33</th>
+          <th>Rod 34</th>
+          <th>Rod 35</th>
+          <th>Rod 36</th>
+          <th>Rod 37</th>
+          <th>Rod 38</th>
+          <th>Rod 39</th>
+          <th>Rod 40</th>
+          <th>Rod 41</th>
+          <th>Rod 42</th>
+          <th>Rod 43</th>
+          <th>Rod 44</th>
+          <th>Rod 45</th>
+          <th>Rod 46</th>
+          <th>Rod 47</th>
+          <th>Rod 48</th>
+          <th>Rod 49</th>
+          <th>Rod 50</th>
+        </tr>
+
+        <tr><td>AGL</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>AGN</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>ATA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>AUR</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>BRA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>CHA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>DON</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>GET</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>IBI</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>ITU</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        
+      </table>
+    </div>
+
+    <h3>Matriz de Adjacência</h3>
+    <p>Já matriz de <b>adjacência</b> representa a ligação entre os vertices, portanto, tantos as linhas como as colunas representão vertices, no caso do exemplo elas representão as cidades, o número "1" indica as duas cidades que são ligadas,como o grafo é não dirigido, cada estrada serárepresentada duas vezes, uma superior a diagonal principal e a outra inferior a ela.</p>
+    <div class="tabela">
+      <table>
+        <tr>
+          <th>Cid/Rod</th>
+          <th>AGL</th>
+          <th>AGN</th>
+          <th>ATA</th>
+          <th>AUR</th>
+          <th>BRA</th>
+          <th>CHA</th>
+          <th>DON</th>
+          <th>GET</th>
+          <th>IBI</th>
+          <th>ITU</th>
+          <th>JOS</th>
+          <th>LAU</th>
+          <th>LON</th>
+          <th>MIR</th>
+          <th>NER</th>
+          <th>PET</th>
+          <th>POU</th>
+          <th>RDC</th>
+          <th>RDO</th>
+          <th>RDS</th>
+          <th>SAL</th>
+          <th>TAI</th>
+          <th>TER</th>
+          <th>TRO</th>
+          <th>VID</th>
+          <th>VIT</th>
+          <th>WIT</th>
+        </tr>
+
+        <tr><td>AGL</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>AGN</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>ATA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>AUR</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>BRA</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </table>
+      
+      
+
+
+    </div>
+
+  </div>
+
   <div class="comousar">
     <h2>Como Usar</h2>
     <ol>

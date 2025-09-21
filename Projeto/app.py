@@ -1,5 +1,5 @@
 from flask import Flask, send_from_directory, request, jsonify
-from Conexao import Conexao
+from DadosGrafo import DadosGrafo
 
 app = Flask(__name__, static_folder="static")
 
@@ -9,9 +9,8 @@ def index():
 
 @app.route("/grafo")
 def grafo_json():
-    db = Conexao()
-    db.conectar()
-    grafo = db.CriarGrafo()
+    dg = DadosGrafo()
+    grafo = dg.CriarGrafo()
 
     nodes = [{"data": {"id": v, "label": v}} for v in grafo.vertex_data if v]
     edges = []
@@ -32,9 +31,8 @@ def dijkstra():
     data = request.get_json()
     inicio, fim = data["inicio"], data["fim"]
 
-    db = Conexao()
-    db.conectar()
-    grafo = db.CriarGrafo()
+    dg = DadosGrafo()
+    grafo = dg.CriarGrafo()
 
     distancia, caminho = grafo.dijkstra(inicio, fim)
     return jsonify({"distancia": distancia, "caminho": caminho})
