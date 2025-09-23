@@ -183,6 +183,31 @@ th, td {
   padding: 8px;
 }
 
+.lista {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: 1000px;
+  margin: 40px;
+  border: solid #617cb6;
+  font-size: larger;
+  padding: 10px;
+}
+
+.arestas {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+  max-width: 1000px;
+  margin: 40px;
+  border: solid #617cb6;
+  font-size: larger;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
 .form {
   display: flex;
   justify-content: center;
