@@ -80,6 +80,31 @@ function calcular() {
   });
 }
 
+function abrirModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "flex";
+
+  function escListener(e) {
+    if (e.key === "Escape") {
+      fecharModal(id);
+      document.removeEventListener("keydown", escListener);
+    }
+  }
+  document.addEventListener("keydown", escListener);
+
+  modal.addEventListener("click", function foraClick(e) {
+    if (e.target === modal) {
+      fecharModal(id);
+      modal.removeEventListener("click", foraClick);
+      document.removeEventListener("keydown", escListener);
+    }
+  });
+}
+
+function fecharModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   carregarGrafo();
   document.getElementById("btnCalcular").addEventListener("click", calcular);
