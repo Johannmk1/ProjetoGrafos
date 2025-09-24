@@ -21,158 +21,246 @@
 </header>
 
 <section class="inicio" id="topo">
-  <h2>Teoria e prática sobre Grafos & Algoritmo de Dijkstra</h2>
-  <p>Apreanda conceitos de teoria dos grafos e o cálculo do menor caminho usando o algoritmo de Dijkstra. Entenda sobre a teoria e experimente interagir com nosso grafo!</p>
+  <div class="texto">
+    <h2>Grafos na Teoria e na Prática: do Conceito ao Algoritmo de Dijkstra</h2>
+    <p>Descubra os conceitos fundamentais da teoria dos grafos e aprenda como calcular o menor caminho com o algoritmo de Dijkstra. Explore exemplos práticos e interaja com nosso grafo para compreender de forma intuitiva como tudo funciona.</p>
+  </div>
 </section>
 
 <section class="conteudo" id="conceito">
   <h2>Conceito</h2>
-  <p>Um grafo é uma estrutura matemática e computacional que serve para representar relações e conexões entre diferentes elementos.</br>Ele é composto por dois componentes básicos:</p>
+  <p>
+    Um <strong>grafo</strong> é uma estrutura matemática usada para modelar relações entre elementos. 
+    Ele é composto por <strong>vértices</strong> (ou nós) — que representam objetos ou entidades — e por 
+    <strong>arestas</strong> (ou ligações) — que representam as conexões entre esses vértices.
+  </p>
+  <p>
+    Grafos servem para representar muitos sistemas interconectados do mundo real. Exemplos comuns:
+  </p>
   <ul>
-    <li>Vértices (ou nós): representam os objetos ou entidades do sistema.</li>
-    <li>Arestas (ou ligações): representam as conexões ou relações entre esses objetos.</li>
+    <li><strong>Mapas:</strong> cidades são vértices e estradas são arestas.</li>
+    <li><strong>Redes sociais:</strong> pessoas são vértices; amizades ou seguidores são arestas.</li>
+    <li><strong>Redes de computadores:</strong> máquinas e roteadores são vértices; links e cabos são arestas.</li>
   </ul>
-  <p>Essa estrutura pode ser aplicada a praticamente qualquer situação em que haja elementos interconectados.</br>Por exemplo:</p>
+  <p>
+    Dependendo das suas características, um grafo pode assumir diferentes formas:
+  </p>
   <ul>
-    <li>Em um mapa de cidades, os vértices são as cidades e as arestas são as estradas que as ligam.</li>
-    <li>Em uma rede social, cada pessoa é um vértice, e a amizade entre duas pessoas é uma aresta.</li>
-    <li>Em computação em redes, computadores e roteadores são vértices, enquanto os cabos ou sinais sem fio são as arestas.</li>
+    <li><strong>Simples:</strong> sem laços e sem arestas múltiplas entre os mesmos vértices.</li>
+    <li><strong>Direcionado (dígrafo):</strong> as arestas têm sentido (A → B).</li>
+    <li><strong>Não direcionado:</strong> as arestas não têm sentido (A — B).</li>
+    <li><strong>Ponderado:</strong> as arestas têm um <em>peso</em> (por exemplo, distância, tempo ou custo).</li>
   </ul>
-  <p>Um grafo pode ser simples, quando não possui múltiplas arestas entre os mesmos vértices, ou complexo, quando inclui pesos (custos), direções, ou múltiplas ligações.</br>Graças a essa flexibilidade, os grafos são uma ferramenta poderosa para modelar e resolver problemas do mundo real.</p>
+  <p>
+    Essa versatilidade torna os grafos uma ferramenta poderosa para modelar e resolver problemas práticos — 
+    como encontrar o menor caminho entre cidades, otimizar rotas de entrega ou detectar comunidades em redes sociais.
+  </p>
 </section>
 
 <section class="conteudo" id="historia">
   <h2>Breve História</h2>
-  <p>A origem da teoria dos grafos remonta ao século XVIII, com o matemático suíço Leonhard Euler.</p>
-  <p>O marco inicial foi o famoso Problema das Sete Pontes de Königsberg (1736).</p>
-  <p>Na cidade de Königsberg (hoje Kaliningrado, Rússia), havia dois grandes rios cortando a região e sete pontes conectando diferentes partes da cidade.</p>
-  <p>O desafio era simples de explicar, mas complexo de resolver:</p>
+
+  <p>
+    A <strong>Teoria dos Grafos</strong> nasceu no século XVIII, graças ao matemático suíço 
+    <strong>Leonhard Euler</strong>. O ponto de partida foi um desafio curioso da época: 
+    o <strong>Problema das Sete Pontes de Königsberg</strong> (1736).
+  </p>
+
+  <p>
+    A cidade de Königsberg (atual Kaliningrado, Rússia) era cortada por dois rios e possuía 
+    <strong>sete pontes</strong> que conectavam suas regiões. A questão era simples de enunciar:
+  </p>
+
+  <blockquote>
+    <em>“É possível caminhar pela cidade atravessando cada ponte exatamente uma vez, sem repetir nenhuma?”</em>
+  </blockquote>
+
   <div class="texto_img">
     <div class="texto">
-      <p>É possível caminhar pela cidade atravessando cada ponte exatamente uma vez, sem repetir nenhuma?</p>
-      <p>Euler analisou o problema e demonstrou que não era possível.</br>Sua solução inovadora consistiu em abstrair o mapa da cidade em uma forma simplificada, onde as terras eram representadas como vértices e as pontes como arestas.</p>
-      <p>Esse raciocínio deu origem àquilo que chamamos hoje de Teoria dos Grafos.</br>A importância do trabalho de Euler foi tão grande que ele é considerado o pai da Matemática Discreta.</p>
-      <p>Atualmente, os grafos são aplicados em diversas áreas da ciência, tecnologia e engenharia, servindo como base para algoritmos, sistemas de transporte, redes de comunicação, biologia computacional e até inteligência artificial.</p>
+      <p>
+        Euler demonstrou que a tarefa era <strong>impossível</strong>.  
+        Sua ideia genial foi <strong>abstrair o mapa da cidade</strong>: 
+        cada região de terra virou um <strong>vértice</strong>, 
+        e cada ponte virou uma <strong>aresta</strong>.
+      </p>
+      <p>
+        Essa forma de pensar inaugurou uma nova área da matemática: a <strong>Teoria dos Grafos</strong>.  
+        Por isso, Euler é considerado o <strong>pai da Matemática Discreta</strong>.
+      </p>
+      <p>
+        Desde então, os grafos se tornaram uma ferramenta essencial.  
+        Hoje eles são aplicados em:
+      </p>
+      <ul>
+        <li><strong>Sistemas de transporte</strong>: rotas de ônibus, metrôs e estradas.</li>
+        <li><strong>Redes de comunicação</strong>: internet, telefonia e redes sociais.</li>
+        <li><strong>Ciências biológicas</strong>: análise de cadeias alimentares ou interações genéticas.</li>
+        <li><strong>Inteligência Artificial</strong>: desde busca de rotas até recomendações em plataformas digitais.</li>
+      </ul>
     </div>
-    <img src="/static/img/PontesKonigsberg.jpg" alt="Representação do Problema das Sete Pontes de Königsberg">
+    <img src="/static/img/PontesKonigsberg.jpg" 
+         alt="Representação do Problema das Sete Pontes de Königsberg">
   </div>
 </section>
 
+
 <section class="conteudo" id="tipos">
   <h2>Tipos de Grafos</h2>
-  <p>Os grafos podem assumir diferentes formas e características, dependendo de como seus vértices e arestas se relacionam. Veja os principais tipos:</p>
+  <p>
+    Os grafos podem variar bastante conforme a forma como seus <strong>vértices</strong> e 
+    <strong>arestas</strong> se organizam. A seguir, veja os principais tipos de grafos, 
+    com definições e exemplos práticos:
+  </p>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Grafo Simples</h3>
       <ul>
-        <li><b>Definição: </b>não possui arestas múltiplas entre os mesmos vértices e não contém laços (uma aresta que conecta um vértice a ele mesmo).</li>
-        <li><b>Exemplo: </b>um grupo de amigos em que cada amizade é representada apenas uma vez. Se João e Maria são amigos, não é necessário repetir essa ligação.</li>
+        <li><b>Definição:</b> não possui laços (arestas que ligam um vértice a si mesmo) nem múltiplas arestas entre os mesmos vértices.</li>
+        <li><b>Exemplo:</b> uma rede de amizade em que cada ligação aparece apenas uma vez. Se João é amigo de Maria, não é preciso repetir essa conexão.</li>
+        <li><b>Aplicação:</b> modelagem de redes sociais básicas e diagramas de relações.</li>
       </ul>
     </div>
-    <img src="/static/img/Simples.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/Simples.jpg" alt="Exemplo de grafo simples">
   </div>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Multigrafo</h3>
       <ul>
-        <li><b>Definição: </b>permite múltiplas arestas entre os mesmos vértices.</li>
-        <li><b>Exemplo: </b>no transporte público, duas cidades podem estar conectadas por várias linhas de ônibus diferentes. Cada linha pode ser representada como uma aresta adicional entre as mesmas cidades.</li>
+        <li><b>Definição:</b> permite múltiplas arestas entre os mesmos vértices.</li>
+        <li><b>Exemplo:</b> duas cidades podem estar ligadas por diferentes rotas de ônibus. Cada linha de ônibus é uma aresta adicional.</li>
+        <li><b>Aplicação:</b> transporte público, redes com múltiplos canais de comunicação.</li>
       </ul>
     </div>
-    <img src="/static/img/MultiGrafos.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/MultiGrafos.jpg" alt="Exemplo de multigrafo">
   </div>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Grafo Direcionado (ou Dígrafo)</h3>
       <ul>
-        <li><b>Definição: </b>as arestas têm uma direção, indicando que a relação vai de um vértice para outro, mas não necessariamente o contrário.</li>
-        <li><b>Exemplo: </b>no Twitter, se Ana segue Carlos, isso não significa que Carlos segue Ana. A relação tem direção.</li>
+        <li><b>Definição:</b> as arestas possuem direção, ou seja, a relação vai de um vértice para outro, mas não necessariamente o contrário.</li>
+        <li><b>Exemplo:</b> no Twitter, se Ana segue Carlos, isso não significa que Carlos segue Ana.</li>
+        <li><b>Aplicação:</b> fluxos de informação, rotas de tráfego, hierarquias de processos.</li>
       </ul>
     </div>
-    <img src="/static/img/Dirigido.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/Dirigido.jpg" alt="Exemplo de grafo direcionado">
   </div>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Grafo Não Direcionado</h3>
       <ul>
-        <li><b>Definição: </b>as arestas não têm direção, ou seja, a conexão é mútua.</li>
-        <li><b>Exemplo: </b>em uma rede de amizade do Facebook, se Ana é amiga de Carlos, então Carlos também é amigo de Ana.</li>
+        <li><b>Definição:</b> as arestas não têm direção; a relação é mútua.</li>
+        <li><b>Exemplo:</b> no Facebook, se Ana é amiga de Carlos, então Carlos também é amigo de Ana.</li>
+        <li><b>Aplicação:</b> redes de colaboração, conexões físicas bidirecionais (como cabos).</li>
       </ul>
     </div>
-    <img src="/static/img/NaoDirigido.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/NaoDirigido.jpg" alt="Exemplo de grafo não direcionado">
   </div>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Grafo Ponderado</h3>
       <ul>
-        <li><b>Definição: </b>cada aresta possui um peso ou custo associado, que pode representar distância, tempo, preço ou qualquer valor numérico.</li>
-        <li><b>Exemplo: </b>em um mapa de estradas, as arestas podem ter como peso a quilometragem entre duas cidades.</li>
+        <li><b>Definição:</b> cada aresta tem um peso associado, representando distância, tempo, custo ou qualquer valor numérico.</li>
+        <li><b>Exemplo:</b> em mapas de estradas, o peso pode ser a quilometragem entre duas cidades.</li>
+        <li><b>Aplicação:</b> algoritmos de menor caminho (como Dijkstra), otimização de rotas e logística.</li>
       </ul>
     </div>
-    <img src="/static/img/Ponderado.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/Ponderado.jpg" alt="Exemplo de grafo ponderado">
   </div>
 
   <div class="texto_img">
     <div class="texto">
       <h3>Grafo Completo</h3>
       <ul>
-        <li><b>Definição: </b>cada vértice está ligado a todos os outros vértices do grafo.</li>
-        <li><b>Exemplo: </b>em um grupo de 5 pessoas em que todos são amigos de todos, cada pessoa está conectada com as demais.</li>
+        <li><b>Definição:</b> cada vértice está conectado a todos os outros vértices do grafo.</li>
+        <li><b>Exemplo:</b> em um grupo de 5 pessoas onde todos são amigos de todos, cada pessoa está ligada às demais.</li>
+        <li><b>Aplicação:</b> análise de redes totalmente conectadas e simulações teóricas.</li>
       </ul>
     </div>
-    <img src="/static/img/Completo.jpg" alt="Representação do tipo de Grafo">
+    <img src="/static/img/Completo.jpg" alt="Exemplo de grafo completo">
   </div>
 </section>
 
 <section class="conteudo" id="regras">
   <h2>Regras e Propriedades Básicas dos Grafos</h2>
-  <p>Para compreender melhor os grafos, é importante conhecer algumas regras fundamentais e propriedades matemáticas que definem seu funcionamento:</p>
+  <p>
+    Para compreender bem os grafos, é importante conhecer algumas regras fundamentais 
+    e propriedades matemáticas que definem seu funcionamento:
+  </p>
+
   <ol>
-    <li>Número de Vértices (V):
+    <li><b>Número de Vértices (V)</b>
       <ul>
         <li>Um grafo sempre possui pelo menos 1 vértice.</li>
-        <li>Pode haver milhões de vértices em aplicações reais, como no caso das redes sociais.</li>
+        <li>Em aplicações reais, pode haver milhões de vértices (como perfis em redes sociais).</li>
       </ul>
     </li>
-    <li>Arestas (E):
+
+    <li><b>Arestas (E)</b>
       <ul>
-        <li>Uma aresta conecta dois vértices.</li>
-        <li>Pode ser um laço, quando conecta um vértice a ele mesmo.</li>
+        <li>Cada aresta conecta dois vértices (podendo ser direcionada ou não).</li>
+        <li>Um <b>laço</b> ocorre quando a aresta conecta um vértice a si mesmo.</li>
+        <li>Podem existir <b>arestas múltiplas</b> entre os mesmos vértices (em multigrafos).</li>
       </ul>
     </li>
-    <li>Grau de um Vértice:
+
+    <li><b>Grau de um Vértice</b>
       <ul>
-        <li>É a quantidade de arestas que incidem sobre ele.</li>
-        <li>Em grafos não direcionados, é simplesmente o número de conexões.</li>
-        <li>Em grafos direcionados, temos:
+        <li>É o número de arestas que incidem sobre um vértice.</li>
+        <li>Em grafos não direcionados: corresponde ao número de conexões.</li>
+        <li>Em grafos direcionados:
           <ul>
-            <li>Grau de entrada (in-degree): número de arestas que chegam ao vértice.</li>
-            <li>Grau de saída (out-degree): número de arestas que saem do vértice.</li>
+            <li><b>Grau de entrada (in-degree):</b> nº de arestas que chegam ao vértice.</li>
+            <li><b>Grau de saída (out-degree):</b> nº de arestas que saem do vértice.</li>
           </ul>
         </li>
       </ul>
     </li>
-    <li>Grafos Conexos e Desconexos:
+
+    <li><b>Grafos Conexos e Desconexos</b>
       <ul>
-        <li>Conexo: existe pelo menos um caminho entre todos os pares de vértices.</li>
-        <li>Desconexo: há vértices isolados ou grupos de vértices que não têm ligação com os demais.</li>
+        <li><b>Conexo:</b> existe pelo menos um caminho entre todos os pares de vértices.</li>
+        <li><b>Desconexo:</b> contém vértices isolados ou componentes separados sem ligação entre si.</li>
       </ul>
     </li>
-    <li>Ciclos:
+
+    <li><b>Ciclos</b>
       <ul>
-        <li>Ocorrem quando há um caminho que começa e termina no mesmo vértice.</li>
-        <li>Grafos sem ciclos são chamados de aciclos, como as árvores.</li>
+        <li>Um ciclo ocorre quando há um caminho que começa e termina no mesmo vértice.</li>
+        <li>Um grafo sem ciclos é chamado de <b>acíclico</b> (como as árvores).</li>
+        <li>Um <b>ciclo hamiltoniano</b> passa por todos os vértices exatamente uma vez.</li>
+        <li>Um <b>ciclo euleriano</b> percorre todas as arestas exatamente uma vez.</li>
       </ul>
     </li>
-    <li>Distância e Caminhos:
+
+    <li><b>Distância e Caminhos</b>
       <ul>
-        <li>A distância entre dois vértices é o número mínimo de arestas necessárias para ligá-los.</li>
-        <li>O menor caminho é uma das aplicações mais importantes em grafos, usado em rotas e otimização.</li>
+        <li>A <b>distância</b> entre dois vértices é o nº mínimo de arestas necessárias para ligá-los.</li>
+        <li>O <b>menor caminho</b> é fundamental em problemas de otimização (como rotas).</li>
+      </ul>
+    </li>
+
+    <li><b>Representações Matemáticas</b>
+      <ul>
+        <li>Um grafo pode ser descrito como <code>G = (V, E)</code>, onde:
+          <ul>
+            <li><code>V</code>: conjunto de vértices.</li>
+            <li><code>E</code>: conjunto de arestas.</li>
+          </ul>
+        </li>
+        <li>O número máximo de arestas em um grafo simples não direcionado é <code>n(n-1)/2</code>, 
+            onde <code>n</code> é o nº de vértices.</li>
+      </ul>
+    </li>
+
+    <li><b>Subgrafos</b>
+      <ul>
+        <li>Um subgrafo é formado a partir de um grafo maior, escolhendo apenas parte dos vértices e arestas.</li>
+        <li>Útil para estudar regiões específicas dentro de grandes redes.</li>
       </ul>
     </li>
   </ol>
@@ -182,52 +270,57 @@
   <h2>Exemplos de Aplicação dos Grafos</h2>
   <p>Os grafos não ficam apenas na teoria; eles estão presentes em inúmeras áreas da vida real e da tecnologia:</p>
   <ul>
-    <li>Mapas e Rotas:
+    <li><b>Mapas e Rotas</b>
       <ul>
         <li>Encontrar o menor caminho entre cidades (ex.: Google Maps, Waze).</li>
         <li>Exemplo: calcular a rota mais rápida entre dois pontos considerando o trânsito.</li>
       </ul>
     </li>
-  </ul>
-  <ul>
-    <li>Redes Sociais:
+
+    <li><b>Redes Sociais</b>
       <ul>
         <li>Usuários são vértices; amizades ou seguidores são as arestas.</li>
         <li>Exemplo: no Facebook, a relação é não direcionada (amizade mútua).</li>
         <li>No Instagram/Twitter, a relação é direcionada (seguir alguém não implica ser seguido).</li>
       </ul>
     </li>
-  </ul>
-  <ul>
-    <li>Computação em Redes:
+
+    <li><b>Computação em Redes</b>
       <ul>
-        <li>Computadores e servidores são nós; cabos, roteadores ou conexões Wi-Fi são arestas.
-</li>
+        <li>Computadores e servidores são nós; cabos, roteadores ou conexões Wi-Fi são arestas.</li>
         <li>Exemplo: a Internet pode ser representada como um enorme grafo global.</li>
       </ul>
     </li>
-  </ul>
-  <ul>
-    <li>Biologia:
+
+    <li><b>Biologia</b>
       <ul>
         <li>Grafos descrevem cadeias alimentares, redes metabólicas e interações genéticas.</li>
-        <li>Exemplo: em uma cadeia alimentar, os animais são vértices e as relações de "quem come quem" são as arestas.
-</li>
+        <li>Exemplo: em uma cadeia alimentar, os animais são vértices e as relações de "quem come quem" são as arestas.</li>
       </ul>
     </li>
-  </ul>
-  <ul>
-    <li>Engenharia:
+
+    <li><b>Engenharia</b>
       <ul>
         <li>Circuitos elétricos podem ser modelados como grafos.</li>
         <li>Exemplo: cada componente (resistor, capacitor, fonte) é um vértice e os fios que os conectam são as arestas.</li>
       </ul>
     </li>
-  </ul>
-  <ul>
-    <li>Ciência de Dados e IA:
+
+    <li><b>Ciência de Dados e Inteligência Artificial</b>
       <ul>
         <li>Grafos ajudam a analisar conexões complexas, como em recomendações da Netflix ou em sistemas antifraude bancária.</li>
+      </ul>
+    </li>
+
+    <li><b>Química</b>
+      <ul>
+        <li>Moléculas podem ser representadas como grafos, onde átomos são vértices e ligações químicas são arestas.</li>
+      </ul>
+    </li>
+
+    <li><b>Linguística</b>
+      <ul>
+        <li>Grafos modelam relações entre palavras em textos, redes semânticas e conexões entre conceitos.</li>
       </ul>
     </li>
   </ul>
@@ -235,47 +328,97 @@
 
 <section class="conteudo" id="algoritmos">
   <h2>Algoritmos Importantes em Grafos</h2>
-  <p>A teoria dos grafos não se resume apenas a desenhar vértices e arestas. Para resolver problemas do mundo real, usamos algoritmos específicos, cada um com sua finalidade:</p>
+  <p>
+    A teoria dos grafos não se resume apenas a desenhar vértices e arestas. 
+    Para resolver problemas do mundo real, usamos algoritmos específicos, 
+    cada um com sua finalidade:
+  </p>
 
   <h3>Busca em Largura (BFS - Breadth-First Search)</h3>
   <ul>
-    <li><b>Como funciona: </b>percorre o grafo camada por camada, visitando todos os vizinhos de um vértice antes de avançar para a próxima "camada".</li>
-    <li><b>Exemplo: </b>imagine uma pedra jogada em um lago. As ondas se expandem em círculos: primeiro o ponto mais próximo, depois os mais distantes.
-</li>
-    <li><b>Aplicação: </b>encontrar o menor número de passos para chegar de um ponto a outro em jogos ou mapas.</li>
+    <li><b>Como funciona:</b> percorre o grafo camada por camada, 
+        visitando todos os vizinhos de um vértice antes de avançar.</li>
+    <li><b>Exemplo:</b> como ondas em um lago após jogar uma pedra — 
+        primeiro os pontos mais próximos, depois os mais distantes.</li>
+    <li><b>Aplicação:</b> encontrar o menor número de passos em mapas, jogos ou redes sociais.</li>
   </ul>
 
   <h3>Busca em Profundidade (DFS – Depth-First Search)</h3>
   <ul>
-    <li><b>Como funciona: </b>vai "cavando" profundamente em uma direção até não poder mais avançar, então retorna e tenta outros caminhos.</li>
-    <li><b>Exemplo: </b>como explorar um labirinto sempre escolhendo um corredor até o fim, e só depois voltando atrás.</li>
-    <li><b>Aplicação: </b>verificar se há ciclos em um grafo ou explorar todas as possibilidades em jogos de tabuleiro como xadrez.</li>
+    <li><b>Como funciona:</b> segue um caminho até o fim antes de voltar 
+        e explorar outros.</li>
+    <li><b>Exemplo:</b> explorar um labirinto escolhendo sempre um corredor 
+        até o final e só então retornando.</li>
+    <li><b>Aplicação:</b> detectar ciclos, gerar labirintos ou explorar árvores de decisão.</li>
   </ul>
 
   <h3>Algoritmo de Dijkstra</h3>
   <ul>
-    <li><b>Como funciona: </b>calcula o menor caminho entre dois vértices em um grafo ponderado (com pesos). Ele vai expandindo rotas mais baratas primeiro, até chegar ao destino.</li>
-    <li><b>Exemplo: </b>encontrar a rota mais rápida em um mapa de cidades levando em conta a distância.</li>
-    <li><b>Aplicação: </b>sistemas de navegação (Google Maps, Waze, GPS de carros) e logística de entregas (iFood, Uber Eats).</li>
+    <li><b>Como funciona:</b> encontra o menor caminho em grafos ponderados, 
+        sempre expandindo a rota de menor custo.</li>
+    <li><b>Exemplo:</b> calcular a rota mais curta entre cidades com distâncias diferentes.</li>
+    <li><b>Aplicação:</b> GPS, logística de entregas, redes de transporte.</li>
+  </ul>
+
+  <h3>Algoritmo de Kruskal</h3>
+  <ul>
+    <li><b>Como funciona:</b> constrói uma árvore geradora mínima escolhendo 
+        arestas de menor peso que não formam ciclos.</li>
+    <li><b>Exemplo:</b> conectar cidades gastando a menor quantidade de material possível.</li>
+    <li><b>Aplicação:</b> redes elétricas, redes de fibra óptica, organização de cabos em prédios.</li>
+  </ul>
+
+  <h3>Algoritmo de Prim</h3>
+  <ul>
+    <li><b>Como funciona:</b> começa em um vértice e vai expandindo a árvore geradora mínima 
+        escolhendo sempre a aresta de menor peso conectada.</li>
+    <li><b>Exemplo:</b> planejar estradas que conectem todas as cidades com menor custo.</li>
+    <li><b>Aplicação:</b> otimização de infraestrutura de telecomunicações ou transportes.</li>
+  </ul>
+
+  <h3>Algoritmo de Floyd-Warshall</h3>
+  <ul>
+    <li><b>Como funciona:</b> calcula os menores caminhos entre <b>todos</b> os pares de vértices.</li>
+    <li><b>Exemplo:</b> matriz de distâncias entre todas as cidades de um estado.</li>
+    <li><b>Aplicação:</b> análise de tráfego em grandes redes de transporte ou comunicação.</li>
   </ul>
 </section>
 
 <section class="conteudo" id="curiosidade">
   <h2>Curiosidades sobre Grafos e Algoritmos</h2>
   <ul>
-    <li>O Algoritmo de Dijkstra foi criado em 1956, em apenas 20 minutos, segundo o próprio Edsger Dijkstra, enquanto esperava sua esposa em um café.</li>
-    <li>O Google PageRank (que revolucionou a internet nos anos 2000) foi baseado em teoria dos grafos: cada página é um vértice e cada link é uma aresta.</li>
-    <li>A Internet é o maior grafo já existente, conectando bilhões de computadores e dispositivos no mundo.</li>
-    <li>Jogos como xadrez, dama e até RPGs digitais podem ser modelados como grafos de posições e movimentos possíveis.</li>
-    <li>Em biologia, grafos ajudam a mapear conexões do cérebro humano (a chamada connectome), redes de proteínas e cadeias alimentares.</li>
+    <li><b>Origem histórica:</b> a teoria dos grafos nasceu em 1736 com Leonhard Euler, ao resolver o famoso problema das <i>Sete Pontes de Königsberg</i>.</li>
+    <li><b>Algoritmo de Dijkstra:</b> criado em 1956 em apenas 20 minutos, segundo o próprio Edsger Dijkstra, enquanto ele esperava sua esposa em um café.</li>
+    <li><b>Internet:</b> é o maior grafo já existente, conectando bilhões de computadores e dispositivos no mundo todo.</li>
+    <li><b>Google PageRank:</b> revolucionou a busca na internet nos anos 2000 usando teoria dos grafos: páginas são vértices e links são arestas.</li>
+    <li><b>Jogos:</b> xadrez, damas e RPGs digitais podem ser modelados como grafos de posições e movimentos possíveis.</li>
+    <li><b>Biologia:</b> grafos ajudam a mapear conexões do cérebro humano (o <i>connectome</i>), redes de proteínas e cadeias alimentares.</li>
+    <li><b>Ciência moderna:</b> Netflix, Amazon e Spotify usam algoritmos baseados em grafos para recomendar filmes, músicas e produtos.</li>
   </ul>
 </section>
 
 <section class="conteudo" id="pratica">
   <div class="contexto">
     <h2>Vamos à Prática</h2>
-    <p>Para exemplificar o conteúdo, abaixo segue um grafo que representa as 27 cidades do Auto Vale (Legenda das siglas no final) e as estradas fictícias que as ligam.</p>
-    <p>O grafo em questão é não dirigido e é ponderado, ou seja, as estradas seguem ambos os sentidos e possuem pesos, os quais foram criados apartir da tabela abaixo, onde são considerados os valores fictícios de distância, qualidade e tipo da estrada.</p>
+    <p>
+      Para aplicar o que vimos até agora, abaixo temos um grafo que representa as 
+      <b>27 cidades do Alto Vale</b> (a legenda das siglas está no final da página) 
+      e as estradas fictícias que as conectam.
+    </p>
+    <p>
+      O grafo utilizado é <b>não dirigido</b> e <b>ponderado</b>:  
+      <ul>
+        <li><b>Não dirigido:</b> as estradas podem ser percorridas nos dois sentidos (ida e volta).</li>
+        <li><b>Ponderado:</b> cada estrada possui um valor numérico (peso) associado.</li>
+      </ul>
+    </p>
+    <p>
+      Os <b>pesos</b> foram definidos a partir da tabela apresentada, 
+      considerando valores fictícios de <i>distância</i>, <i>qualidade</i> 
+      e <i>tipo da estrada</i>.  
+      Esses critérios ajudam a mostrar como os grafos podem representar 
+      situações do mundo real de forma quantitativa.
+    </p>
   </div>
 
   <div class="tabela">
@@ -795,7 +938,7 @@
 
   <div class="contexto">
     <h2>Representações de grafos</h2>
-    <p>Existem algumas maneiras de representar um grafo, dentre elas estão:</p>
+    <p>Um grafo pode ser representado de diferentes formas, cada uma adequada para situações específicas:</p>
     <ul>
       <li>Matriz de Incidência</li>
       <li>Matriz de Adjacência</li>
@@ -806,7 +949,16 @@
 
     <div class="representacao">
       <h3>Matriz de Incidência</h3>
-      <p>A matriz de <b>incidência</b> é uma representação visual que relaciona os vértices com suas aresta, no exemplo constas a linhas das ciadades e as colunas das estradas, o número "1" indica as duas cidades que são ligadas pela estrada correspondente à coluna.</p>
+      <p>
+        A <b>matriz de incidência</b> relaciona vértices e arestas de um grafo.  
+        Cada <b>linha</b> representa uma cidade (vértice) e cada <b>coluna</b> corresponde a uma estrada (aresta).  
+        O valor <b>1</b> indica que a cidade participa daquela estrada, enquanto <b>0</b> indica ausência de ligação.  
+        Assim, em cada coluna sempre existirão exatamente dois "1", pois cada estrada conecta duas cidades.
+      </p>
+      <p>
+        No exemplo abaixo, podemos observar como as cidades estão conectadas pelas estradas.  
+        Clique na tabela para visualizar em detalhe.
+      </p>
       <div class="tabela" onclick="abrirModal('ModalIncidencia')">
         <table>
           <tr><th>Cid/Rod</th><th>Rod 1</th><th>Rod 2</th><th>Rod 3</th><th>Rod 4</th><th>Rod 5</th><th>Rod 6</th><th>Rod 7</th><th>Rod 8</th><th>Rod 9</th><th>Rod 10</th><th>Rod 11</th><th>Rod 12</th><th>Rod 13</th><th>Rod 14</th><th>Rod 15</th><th>Rod 16</th><th>Rod 17</th><th>Rod 18</th><th>Rod 19</th><th>Rod 20</th><th>Rod 21</th><th>Rod 22</th><th>Rod 23</th><th>Rod 24</th><th>Rod 25</th><th>Rod 26</th><th>Rod 27</th><th>Rod 28</th><th>Rod 29</th><th>Rod 30</th><th>Rod 31</th><th>Rod 32</th><th>Rod 33</th><th>Rod 34</th><th>Rod 35</th><th>Rod 36</th><th>Rod 37</th><th>Rod 38</th><th>Rod 39</th><th>Rod 40</th><th>Rod 41</th><th>Rod 42</th><th>Rod 43</th><th>Rod 44</th><th>Rod 45</th><th>Rod 46</th><th>Rod 47</th><th>Rod 48</th><th>Rod 49</th><th>Rod 50</th></tr>
@@ -880,7 +1032,15 @@
 
     <div class="representacao">
       <h3>Matriz de Adjacência</h3>
-      <p>Já matriz de <b>adjacência</b> representa a ligação entre os vertices, portanto, tantos as linhas como as colunas representão vertices, no caso do exemplo elas representão as cidades, o número "1" indica as duas cidades que são ligadas,como o grafo é não dirigido, cada estrada serárepresentada duas vezes, uma superior a diagonal principal e a outra inferior a ela.</p>
+      <p style="margin-bottom: 20px;">
+        Já matriz de <b>adjacência</b> representa a ligação entre os vértices, portanto, tanto as linhas como as colunas representam vértices. 
+        No caso do exemplo, elas representam as cidades. O número "1" indica as duas cidades que são ligadas. 
+        Como o grafo é não dirigido, cada estrada será representada duas vezes: uma acima da diagonal principal e outra abaixo dela.
+      </p>
+      <p>
+        No exemplo abaixo, podemos observar como as cidades estão conectadas pelas estradas.  
+        Clique na tabela para visualizar em detalhe.
+      </p>
       <div class="tabela" onclick="abrirModal('ModalAdjacencia')">
         <table>
           <tr>
@@ -968,7 +1128,11 @@
 
     <div class="representacao">
       <h3>Estrutura de Adjacência</h3>
-      <p>A estrutura de adjacência é um pouco diferente, ela é no formato de uma lista, na qual cada linha começa com um dos vértices e é seguida por todos os vertices aos quais o primeiro se liga.</p>
+      <p style="margin-bottom: 20px;">
+        A <b>estrutura de adjacência</b> organiza as conexões do grafo em forma de <b>lista</b>. 
+        Cada linha começa com um vértice e, em seguida, mostra todos os vértices diretamente conectados a ele. 
+        Assim, é fácil identificar com quem cada cidade (vértice) faz ligação.
+      </p>
       <div class="lista">
         <ul>
           <li>AGL → [CHA, LON, POU, RDC]</li>
@@ -1004,7 +1168,12 @@
 
     <div class="representacao">
       <h3>Lista de Arestas</h3>
-      <p>A lista de arestas simplesmente mostra todos os pares ordenados das arestas existentes no grafo, o primeiro sendo o vértice de saída e o segundo sendo o vértice de chegada. Como o grafo utilizado na prática não é dirigido, a ordem das cidades não interfere.</p>
+      <p>
+        A lista de arestas é uma forma direta de representar um grafo.  
+        Nela, cada linha mostra uma conexão entre dois vértices (ou cidades, no nosso exemplo).  
+        Como o grafo utilizado não é dirigido, cada par representa apenas a ligação entre os vértices, sem indicar um sentido específico.  
+        Ou seja, <b>{A, B}</b> significa a mesma coisa que <b>{B, A}</b>, apenas mostrando que existe uma estrada ou ligação entre A e B.
+      </p>
       <div class="arestas">
         {<p>{ALG, CHA}</p>
         <p>{ALG, LON}</p>
@@ -1061,22 +1230,27 @@
     </div>
 
     <div class="representacao">
-      <h3>Grafo Interativo</h3>
-      <p>O grafo é a representação "desenhada", com bolinhas para os vértices e linhas para as arestas. Esta é a melhor forma para visualizar caminhos, por isso, abaixo há um grafo com o qual você pode mexer nas cidades e, ao definir seu de onde para onde deseja ir, ver o caminho desenhado na tela. Veja como usar.</p>
-    </div>
-  </div>
+  <h3>Grafo Interativo</h3>
+  <p>
+    O grafo abaixo é uma representação visual do nosso mapa, onde cada <b>vértice</b> é mostrado como um ponto (cidade) e cada <b>aresta</b> como uma linha que conecta duas cidades.  
+    Diferente das tabelas e listas, aqui você pode <b>interagir</b> diretamente com o grafo: arraste os vértices, reorganize o desenho da forma que quiser e explore as conexões de maneira dinâmica.  
+    Além disso, é possível escolher uma <b>cidade de origem</b> e uma <b>cidade de destino</b> para calcular automaticamente o <b>menor caminho</b>, que será destacado no grafo e exibido em texto logo abaixo.
+  </p>
+</div>
 
-  </br>
+<br/>
 
-  <div class="comousar">
-    <h2>Como Usar</h2>
-    <ol>
-      <li>Selecione o vértice de <b>início</b> e <b>fim</b>.</li>
-      <li>Clique em <b>Calcular</b>.</li>
-      <li>O caminho mais curto será exibido abaixo e destacado no grafo.</li>
-      <li>Experimente diferentes combinações de vértices e explore o grafo interativamente.</li>
-    </ol>
-  </div>
+<div class="comousar">
+  <h2>Como Usar</h2>
+  <ol>
+    <li>Arraste os vértices (cidades) livremente para organizar o grafo da forma que preferir.</li>
+    <li>Selecione a cidade de <b>início</b> (origem) e a cidade de <b>fim</b> (destino).</li>
+    <li>Clique em <b>Calcular</b>.</li>
+    <li>O <b>menor caminho</b> será exibido abaixo e destacado automaticamente no grafo.</li>
+    <li>Teste diferentes combinações e descubra rotas interativamente!</li>
+  </ol>
+</div>
+
 
   <div class="form">
     <label>Início: <select id="inicio"></select></label>
