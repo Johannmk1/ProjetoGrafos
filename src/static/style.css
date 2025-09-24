@@ -107,7 +107,7 @@ header {
   align-items: center;
   text-align: center;
 
-  background: url("/static/img/fundo7.jpg") center/cover no-repeat;
+  background: url("/static/img/FundoInicio.jpg") center/cover no-repeat;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   overflow: hidden;
   scroll-margin-top: 80px;
@@ -379,6 +379,10 @@ footer {
   margin-top: 50px;
 }
 
-footer p {
-  font-size: 1em;
+footer a {
+  color: #FFD700; /* cor dos links */
+  text-decoration: none; /* remove sublinhado */
+}
+footer a:hover {
+  text-decoration: underline; /* efeito ao passar o mouse */
 }

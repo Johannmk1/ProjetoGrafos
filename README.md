@@ -68,7 +68,7 @@ Ele possibilita explorar conceitos fundamentais como **vértices, arestas, camin
 
 ```
 DijkstraEmPython\
-├── Projeto\
+├── src\
 |    ├── static\
 |    │   ├── img\              # Imagens do projeto
 |    │   ├── index.html        # Página principal
