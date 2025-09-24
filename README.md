@@ -93,4 +93,4 @@ O objetivo é **tornar o estudo de grafos mais visual, prático e dinâmico**, c
 ## 🔗 Autores GitHub 
 
 - [**Johann Malkowski**](https://github.com/Johannmk1)  
-- [**Raissa Sofka Mazzi**](https://github.com/Raissa-SM)  
+- [**Raíssa Sofka Mazzi**](https://github.com/Raissa-SM)  
