@@ -133,7 +133,7 @@ header {
   font-size: 3rem;          
   font-weight: 700;         
   color: #fff;              
-  margin-bottom: 40px;   /* antes era 20px → mais espaço abaixo */
+  margin-bottom: 40px; 
   line-height: 1.2;
   display: block;           
   padding-bottom: 0;        
@@ -161,14 +161,12 @@ header {
   scroll-margin-top: 80px;
 }
 
-.inicio h2 {
-  font-size: 3rem;          
-  font-weight: 700;         
-  color: #fff;             
-  margin-bottom: 20px;      
-  line-height: 1.2;
-  display: block;         
-  padding-bottom: 0;     
+section h2 {
+  margin-bottom: 15px;
+  color: #1f3a93;
+  font-size: 2em;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 
