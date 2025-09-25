@@ -56,7 +56,6 @@ header {
 
 .menu.active {
   color: #ffffff;
-  font-weight: bold;
 }
 
 .menu.active::after {
@@ -195,9 +194,6 @@ img {
   height: auto;   
   display: block; 
   margin: 10px;
-}
-
-img {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
