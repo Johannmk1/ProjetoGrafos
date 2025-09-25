@@ -76,7 +76,7 @@ DijkstraEmPython\
 |    │   └── script.js         # Lógica de interação com o grafo
 |    ├── DadosGrafo.py         # Dados e configuração inicial do grafo
 |    ├── Grafo.py              # Implementação da estrutura de grafos
-|    └── app.py                # Backend Flask
+├── app.py                     # Backend Flask
 ├── vercel.json                # Configuração de deploy
 └── README.md                  # Documentação
 ```
