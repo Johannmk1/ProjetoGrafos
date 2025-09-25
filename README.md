@@ -60,11 +60,11 @@ Ele possibilita explorar conceitos fundamentais como **vértices, arestas, camin
 
 ## 📸 Demonstração
 
-![Exemplo do Grafo](Projeto/static/img/GrafoExemplo.png)
+![Exemplo do Grafo](src/static/img/GrafoExemplo.png)
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📂 Estrutura do 
 
 ```
 DijkstraEmPython\
