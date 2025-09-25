@@ -38,4 +38,8 @@ def dijkstra():
     return jsonify({"distancia": distancia, "caminho": caminho})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+    from waitress import serve
+    port = int(os.environ.get("PORT", 5000))
+    serve(app, host="0.0.0.0", port=port)
+
