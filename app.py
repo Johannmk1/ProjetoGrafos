@@ -1,11 +1,11 @@
 from flask import Flask, send_from_directory, request, jsonify
-from DadosGrafo import DadosGrafo
+from src.DadosGrafo import DadosGrafo 
 
-app = Flask(__name__, static_folder="static")
+app = Flask(__name__, static_folder="src/static")
 
 @app.route("/")
 def index():
-    return send_from_directory("static", "index.html")
+    return send_from_directory("src/static", "index.html")
 
 @app.route("/grafo")
 def grafo_json():

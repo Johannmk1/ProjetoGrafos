@@ -1,4 +1,4 @@
-from Grafo import Graph
+from .Grafo import Graph 
 
 class DadosGrafo:
     def CriarGrafo(self):
