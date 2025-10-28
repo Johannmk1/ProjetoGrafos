@@ -7,6 +7,14 @@ app = Flask(__name__, static_folder="src/static")
 def index():
     return send_from_directory("src/static", "index.html")
 
+@app.route("/pratica/grafos")
+def pratica_grafos():
+    return send_from_directory("src/static", "pratica_grafos.html")
+
+@app.route("/pratica/arvores")
+def pratica_arvores():
+    return send_from_directory("src/static", "pratica_arvores.html")
+
 @app.route("/grafo")
 def grafo_json():
     dg = DadosGrafo()

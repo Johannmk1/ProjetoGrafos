@@ -97,6 +97,51 @@ header {
   padding: 8px 15px;
 }
 
+.dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 140%;
+  right: 0;
+  left: auto;
+  background-color: #2c54d4; /* azul principal */
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content li {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.1s;
+  border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+  background-color: #416eff;
+  transform: scale(1.03);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  left: auto;
+}
+
 .inicio {
   position: relative;
   min-height: 100vh;
