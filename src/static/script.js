@@ -132,3 +132,58 @@ document.addEventListener("DOMContentLoaded", () => {
   carregarGrafo();
   document.getElementById("btnCalcular").addEventListener("click", calcular);
 });
+
+// --- ARVORE: carregar/desenhar ---
+let cyArvore = null;
+
+function desenharArvore(data) {
+  // se já existe um cytoscape, destrói e recria
+  if (cyArvore) {
+    cyArvore.destroy();
+    cyArvore = null;
+  }
+
+  cyArvore = cytoscape({
+    container: document.getElementById('cy_arvore'),
+    elements: [...data.nodes, ...data.edges],
+    style: [
+      { selector: 'node', style: {
+          'content': 'data(label)',
+          'text-valign': 'center',
+          'text-halign': 'center',
+          'width': 40,
+          'height': 40,
+          'font-size': 12,
+          'background-color': '#9ae6b4',
+          'border-color': '#2f855a',
+          'border-width': 2
+      }},
+      { selector: 'edge', style: {
+          'width': 3,
+          'curve-style': 'bezier',
+          'target-arrow-shape': 'triangle',
+          'line-color': '#ccc',
+          'target-arrow-color': '#ccc',
+          'label': ''
+      }},
+      { selector: '.highlight', style: {
+          'background-color': '#f6ad55', 'line-color': '#f6ad55', 'width': 50, 'height':50
+      }}
+    ],
+    layout: { name: 'breadthfirst', directed: true, padding: 10, spacingFactor: 1.6 }
+  });
+
+  // centraliza
+  cyArvore.fit();
+}
+
+function carregarArvore() {
+  fetch('/arvore').then(r=>r.json()).then(data=>{
+    // se não há nodes, cria um node vazio (para o cytoscape não quebrar)
+    if (!data.nodes || data.nodes.length === 0) {
+      document.getElementById('cy_arvore').innerHTML = '<p>Árvore vazia</p>';
+      return;
+    }
+    desenharArvore(data);
+  });
+}

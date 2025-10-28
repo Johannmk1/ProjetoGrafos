@@ -45,5 +45,89 @@ def dijkstra():
     distancia, caminho = grafo.dijkstra(inicio, fim)
     return jsonify({"distancia": distancia, "caminho": caminho})
 
+
+# adicionar no topo (junto aos imports)
+from Grafo import ArvoreBinaria  # usa a classe já existente em Grafo.py. :contentReference[oaicite:2]{index=2}
+
+# criar instância global da árvore (serve para testes enquanto o servidor roda)
+arvore = ArvoreBinaria()
+# opcional: popular alguns valores iniciais para testes
+for v in [8,5,10,11,9,12]:
+    arvore.inserir(v)
+
+# --- endpoint para retornar a árvore em formato nodes/edges (Cytoscape) ---
+@app.route("/arvore")
+def arvore_json():
+    def build(n):
+        nodes = []
+        edges = []
+        if n is None:
+            return nodes, edges
+        nodes.append({"data": {"id": str(n.conteudo), "label": str(n.conteudo)}})
+        if n.esq:
+            nodes_child, edges_child = build(n.esq)
+            nodes += nodes_child
+            edges += edges_child
+            edges.append({"data": {"source": str(n.conteudo), "target": str(n.esq.conteudo)}})
+        if n.dir:
+            nodes_child, edges_child = build(n.dir)
+            nodes += nodes_child
+            edges += edges_child
+            edges.append({"data": {"source": str(n.conteudo), "target": str(n.dir.conteudo)}})
+        return nodes, edges
+
+    nodes, edges = build(arvore.raiz)
+    return jsonify({"nodes": nodes, "edges": edges})
+
+# --- inserir um valor na árvore ---
+@app.route("/arvore/insert", methods=["POST"])
+def arvore_insert():
+    data = request.get_json()
+    valor = data.get("valor")
+    # tenta converter para int, se não conseguir guarda como string
+    try:
+        valor = int(valor)
+    except Exception:
+        pass
+    arvore.inserir(valor)
+    return jsonify({"ok": True})
+
+# --- remover um valor da árvore ---
+@app.route("/arvore/remove", methods=["POST"])
+def arvore_remove():
+    data = request.get_json()
+    valor = data.get("valor")
+    try:
+        valor = int(valor)
+    except Exception:
+        pass
+    arvore.remover(valor)
+    return jsonify({"ok": True})
+
+# --- obter uma travessia (inorder, preorder, postorder) ---
+@app.route("/arvore/traverse")
+def arvore_traverse():
+    tipo = request.args.get("tipo", "inorder").lower()
+    res = []
+    def inorder(n):
+        if not n: return
+        inorder(n.esq); res.append(n.conteudo); inorder(n.dir)
+    def preorder(n):
+        if not n: return
+        res.append(n.conteudo); preorder(n.esq); preorder(n.dir)
+    def postorder(n):
+        if not n: return
+        postorder(n.esq); postorder(n.dir); res.append(n.conteudo)
+
+    if tipo.startswith("pre"):
+        preorder(arvore.raiz)
+    elif tipo.startswith("post"):
+        postorder(arvore.raiz)
+    else:
+        inorder(arvore.raiz)
+
+    return jsonify({"lista": res})
+
+
 if __name__ == "__main__":
     app.run()
