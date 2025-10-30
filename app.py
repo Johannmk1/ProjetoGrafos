@@ -47,7 +47,7 @@ def dijkstra():
 
 
 # adicionar no topo (junto aos imports)
-from Grafo import ArvoreBinaria  # usa a classe já existente em Grafo.py. :contentReference[oaicite:2]{index=2}
+from src.Grafo import ArvoreBinaria  # usa a classe já existente em Grafo.py. :contentReference[oaicite:2]{index=2}
 
 # criar instância global da árvore (serve para testes enquanto o servidor roda)
 arvore = ArvoreBinaria()
