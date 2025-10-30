@@ -41,30 +41,5 @@
   <div id="cy_arvore"></div>
 
   <script src="/static/script.js"></script>
-  <script>
-    // Chamadas específicas para árvore — essas funções serão adicionadas ao script.js
-    document.addEventListener('DOMContentLoaded', () => {
-      if (typeof carregarArvore === 'function') carregarArvore();
-      document.getElementById('btnInserir').onclick = () => {
-        const v = document.getElementById('valor').value;
-        fetch('/arvore/insert', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({valor: v})})
-          .then(()=> carregarArvore());
-      };
-      document.getElementById('btnRemover').onclick = () => {
-        const v = document.getElementById('valor').value;
-        fetch('/arvore/remove', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({valor: v})})
-          .then(()=> carregarArvore());
-      };
-      document.getElementById('btnVerTraverse').onclick = () => {
-        const tipo = document.getElementById('tipoTraverse').value;
-        fetch(`/arvore/traverse?tipo=${tipo}`)
-          .then(r=>r.json())
-          .then(j=> {
-            document.getElementById('listaTraverse').textContent = 'Lista: ' + j.lista.join(' - ');
-          });
-      };
-      document.getElementById('btnAtualizar').onclick = () => carregarArvore();
-    });
-  </script>
 </body>
 </html>
