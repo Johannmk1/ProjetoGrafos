@@ -5,41 +5,51 @@
   <title>Prática — Árvores Binárias</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"></script>
   <link rel="stylesheet" href="/static/style.css">
-  <style>
-    body { font-family: sans-serif; padding: 1rem; }
-    #cy_arvore { width: 100%; height: 420px; border: 1px solid #ccc; margin-top: 1rem; }
-    .controls { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-    .controls input { padding:6px; width:120px; }
-    .controls button { padding:6px 10px; cursor:pointer; }
-    #listaTraverse { margin-top: 1rem; font-weight: bold; }
-  </style>
 </head>
 <body>
-  <h2>Prática — Árvores Binárias</h2>
+  <section id="pratica">
+    <h1>Prática — Árvores Binárias</h2>
 
-  <div class="controls">
-    <input id="valor" placeholder="valor (número ou texto)" />
-    <button id="btnInserir">Inserir</button>
-    <button id="btnRemover">Remover</button>
+    <div class="controls">
+      <input id="valor" placeholder="valor (número ou texto)" />
+      <button id="btnInserir">Inserir</button>
+      <button id="btnRemover">Remover</button>
 
-    <label>
-      Travessia:
-      <select id="tipoTraverse">
-        <option value="inorder">In-Order</option>
-        <option value="preorder">Pre-Order</option>
-        <option value="postorder">Post-Order</option>
-      </select>
-    </label>
-    <button id="btnVerTraverse">Ver Travessia</button>
+      <label>
+        Travessia:
+        <select id="tipoTraverse">
+          <option value="inorder">In-Order</option>
+          <option value="preorder">Pre-Order</option>
+          <option value="postorder">Post-Order</option>
+        </select>
+      </label>
+      <button id="btnVerTraverse">Ver Travessia</button>
 
-    <button id="btnAtualizar">Atualizar Visual</button>
+      <button id="btnAtualizar">Atualizar Visual</button>
 
-    <a href="/">Voltar</a>
-  </div>
+      <a href="/">Voltar</a>
+    </div>
 
-  <div id="listaTraverse"></div>
-  <div id="cy_arvore"></div>
+    <div id="listaTraverse"></div>
+    <div id="cy_arvore"></div>
+  </section>
+  
+<footer>
+  <p>
+    Projeto acadêmico desenvolvido para a disciplina de <strong>Estruturas de Dados 2</strong> do curso de <strong>Sistemas de Informação</strong> no <br> <strong>Centro Universitário para o Desenvolvimento do Alto Vale do Itajaí (UNIDAVI)</strong>.
+  </p>
+  <p>
+    Desenvolvido por 
+    <a href="https://github.com/Johannmk1" target="_blank">Johann Malkowski</a> e 
+    <a href="https://github.com/Raissa-SM" target="_blank">Raíssa Sofka Mazzi</a>. &copy; 2025
+  </p>
+  <p>
+    Repositório do projeto: 
+    <a href="https://github.com/Johannmk1/ProjetoGrafos" target="_blank">ProjetoGrafos no GitHub</a>
+  </p>
+</footer>
 
-  <script src="/static/script.js"></script>
+
+<script src="/static/script.js"></script>
 </body>
 </html>

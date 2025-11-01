@@ -249,11 +249,50 @@ img:hover {
 }
 
 #pratica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0px 30px 0px;
+}
+
+.linksPraticas {
+  display: flex;
+  gap: 50px;
+  
+}
+
+.praticas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 50px;
+  background-color: #f4f6f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.praticas:hover {
+  transform: scale(1.03);
+}
+
+.link:hover {
+  transform: scale(1.03);
+}
+  
+.praticaGrafos {
   background-color: #f4f6f8;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 0px;
+  max-width: 1200px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  scroll-margin-top: 80px;
 }
 
 .contexto {
@@ -398,6 +437,13 @@ button:hover {
   box-shadow: 0 4px 15px rgba(168, 168, 168, 0.1);
 }
 
+#cy_arvore {
+  width: 95%;
+  height: 420px;
+  border: 1px solid #ccc;
+  margin: 30px;
+}
+
 .cidades {
   display: flex;
   flex-wrap: wrap;
@@ -411,17 +457,33 @@ button:hover {
 }
 
 footer {
+  font-size: 0.9em;
   text-align: center;
-  padding: 30px 20px;
+  padding: 16px 0px;
   background-color: #1f3a93;
   color: #fff;
   margin-top: 50px;
 }
 
 footer a {
-  color: #FFD700; /* cor dos links */
-  text-decoration: none; /* remove sublinhado */
+  color: #FFD700;
+  text-decoration: none;
 }
-footer a:hover {
-  text-decoration: underline; /* efeito ao passar o mouse */
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 30px;
+}
+
+.controls input {
+  padding: 6px;
+  width: 120px;
+}
+
+#listaTraverse {
+  margin-top: 1rem;
+  font-weight: bold;
 }
