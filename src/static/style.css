@@ -234,7 +234,7 @@ ul, ol {
   justify-content: space-between;
 }
 
-img {
+.imgConteudo {
   max-width: 50%;
   height: auto;   
   display: block; 
@@ -244,7 +244,7 @@ img {
   transition: transform 0.3s ease;
 }
 
-img:hover {
+.imgConteudo:hover {
   transform: scale(1.03);
 }
 
@@ -255,33 +255,48 @@ img:hover {
   padding: 60px 0px 30px 0px;
 }
 
-.linksPraticas {
+.cardsPraticas {
   display: flex;
   gap: 50px;
-  
 }
 
-.praticas {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  max-width: 500px;
+  max-width: 350px;
   margin: 40px auto;
-  padding: 50px;
-  background-color: #f4f6f8;
+  padding: 0px;
+  background-color: #e4ecf5;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.praticas:hover {
+.card:hover {
   transform: scale(1.03);
 }
 
-.link:hover {
-  transform: scale(1.03);
+.imgCard {
+  max-width: 350px;
+  height: auto;   
+  display: block; 
+  margin: 0px;  
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
-  
+
+.txtCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  margin-top: 10px;
+  align-self: center;
+  flex-grow: 1;
+}
+
 .praticaGrafos {
   background-color: #f4f6f8;
   display: flex;
