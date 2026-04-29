@@ -1,55 +1,439 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <title>Prática — Árvores Binárias</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Árvores Binárias — Prática</title>
+  <link rel="icon" href="/static/img/Logo.png">
   <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.24.0/cytoscape.min.js"></script>
+  <meta name="description" content="Projeto acadêmico sobre árvores binárias, BST, travessias e estruturas de dados. Explore conceitos e aprenda com exemplos interativos.">
+  <meta name="keywords" content="árvores binárias, BST, binary search tree, estrutura de dados, travessia, in-order, pre-order, post-order">
+  <meta name="author" content="Johann Malkowski">
 </head>
 <body>
-  <section id="pratica">
-    <h1>Prática — Árvores Binárias</h2>
 
-    <div class="controls">
-      <input id="valor" placeholder="valor (número ou texto)" />
-      <button id="btnInserir">Inserir</button>
-      <button id="btnRemover">Remover</button>
+<header>
+  <h1><a href="/#topo" class="tituloCabecaolho">Grafos</a></h1>
+  <a href="/#conceito" class="menu">Conceito</a>
+  <a href="/#historia" class="menu">História</a>
+  <a href="/#tipos" class="menu">Tipos</a>
+  <a href="/#regras" class="menu">Regras</a>
+  <a href="/#exemplos" class="menu">Exemplos</a>
+  <a href="/#algoritmos" class="menu">Algoritmos</a>
+  <a href="/#curiosidade" class="menu">Curiosidade</a>
 
-      <label>
-        Travessia:
-        <select id="tipoTraverse">
-          <option value="inorder">In-Order</option>
-          <option value="preorder">Pre-Order</option>
-          <option value="postorder">Post-Order</option>
-        </select>
-      </label>
-      <button id="btnVerTraverse">Ver Travessia</button>
+  <li class="dropdown">
+    <a href="#pratica" class="menu" id="btnPratica">Prática</a>
+    <ul class="dropdown-content">
+      <li><a href="/pratica/grafos">Grafos</a></li>
+      <li><a href="/pratica/arvores">Árvores Binárias</a></li>
+    </ul>
+  </li>
+</header>
 
-      <button id="btnAtualizar">Atualizar Visual</button>
+<!-- HERO -->
+<section class="inicio" id="topo">
+  <div class="texto">
+    <h2>Árvores Binárias na Prática</h2>
+    <p>Explore os conceitos de árvores binárias de busca (BST), suas representações e interaja com a estrutura em tempo real.</p>
+  </div>
+</section>
 
-      <a href="/">Voltar</a>
+<!-- CONTEÚDO PRINCIPAL -->
+<section class="praticaGrafos" id="conteudo">
+
+  <!-- 1. CONCEITO -->
+  <div class="contexto">
+    <h2 id="conceito">O que é uma Árvore Binária?</h2>
+    <p>
+      Uma <b>árvore binária</b> é uma estrutura de dados hierárquica em que cada elemento — chamado de <b>nó</b> — pode ter no máximo <b>dois filhos</b>: um à esquerda e um à direita.
+      Diferente de um grafo geral, uma árvore não possui ciclos e sempre possui uma raiz única a partir da qual todos os demais nós são alcançados.
+    </p>
+    <p>
+      A variante mais comum é a <b>Árvore Binária de Busca (BST — Binary Search Tree)</b>, que segue uma regra fundamental de ordenação:
+    </p>
+    <div class="highlight-box">
+      <p>Para qualquer nó <b>N</b>: todos os nós na subárvore <b>esquerda</b> têm valor <b>menor</b> que N, e todos os nós na subárvore <b>direita</b> têm valor <b>maior</b> que N.</p>
+    </div>
+    <p>
+      Essa propriedade torna as operações de busca, inserção e remoção muito eficientes, com complexidade <b>O(log n)</b> em árvores balanceadas.
+    </p>
+  </div>
+
+  <!-- 2. TERMINOLOGIA -->
+  <div class="contexto contexto-espacado">
+    <h2 id="terminologia">Terminologia</h2>
+    <p>Para trabalhar com árvores, é importante conhecer os termos utilizados:</p>
+    <div class="terminologia-grid">
+      <div class="termo">
+        <strong>Raiz (Root)</strong>
+        <span>Nó do topo da árvore, sem pai. Ponto de entrada da estrutura.</span>
+      </div>
+      <div class="termo">
+        <strong>Nó (Node)</strong>
+        <span>Cada elemento da árvore, contendo um valor e ponteiros para filhos.</span>
+      </div>
+      <div class="termo">
+        <strong>Folha (Leaf)</strong>
+        <span>Nó que não possui filhos. Está no nível mais baixo da árvore.</span>
+      </div>
+      <div class="termo">
+        <strong>Filho (Child)</strong>
+        <span>Nó diretamente conectado abaixo de outro nó.</span>
+      </div>
+      <div class="termo">
+        <strong>Pai (Parent)</strong>
+        <span>Nó diretamente conectado acima de outro nó.</span>
+      </div>
+      <div class="termo">
+        <strong>Altura (Height)</strong>
+        <span>Número de arestas do caminho mais longo da raiz até uma folha.</span>
+      </div>
+      <div class="termo">
+        <strong>Nível (Level)</strong>
+        <span>Distância de um nó até a raiz. A raiz está no nível 0.</span>
+      </div>
+      <div class="termo">
+        <strong>Subárvore</strong>
+        <span>Qualquer nó junto com todos os seus descendentes forma uma subárvore.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. TIPOS -->
+  <div class="contexto contexto-espacado">
+    <h2 id="tipos">Tipos de Árvores Binárias</h2>
+    <p>Existem diferentes classificações de árvores binárias, cada uma com características específicas:</p>
+    <div class="tipos-grid">
+      <div class="tipo-card">
+        <h4>🌳 BST (Binary Search Tree)</h4>
+        <p>Filhos esquerdo sempre menores e filhos direito sempre maiores que o nó pai. Facilita buscas eficientes.</p>
+      </div>
+      <div class="tipo-card">
+        <h4>⚖️ AVL</h4>
+        <p>BST autobalanceada: a diferença de altura entre subárvores esquerda e direita é sempre no máximo 1.</p>
+      </div>
+      <div class="tipo-card">
+        <h4>🌿 Completa</h4>
+        <p>Todos os níveis estão completamente preenchidos, exceto possivelmente o último, preenchido da esquerda para a direita.</p>
+      </div>
+      <div class="tipo-card">
+        <h4>🔵 Cheia (Full)</h4>
+        <p>Cada nó tem exatamente 0 ou 2 filhos — nunca apenas 1 filho.</p>
+      </div>
+      <div class="tipo-card">
+        <h4>📏 Degenerada</h4>
+        <p>Cada nó tem apenas um filho, tornando a árvore similar a uma lista encadeada. Pior caso de uma BST.</p>
+      </div>
+      <div class="tipo-card">
+        <h4>🔴⚫ Rubro-Negra</h4>
+        <p>BST balanceada com coloração de nós. Garante O(log n) mesmo em cenários adversos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. COMPLEXIDADE -->
+  <div class="contexto contexto-espacado">
+    <h2 id="complexidade">Complexidade das Operações</h2>
+    <p>
+      A eficiência das operações em uma BST depende diretamente do balanceamento da árvore.
+      Em uma árvore <b>balanceada</b>, todas as operações são O(log n). No pior caso (árvore degenerada), chegam a O(n).
+    </p>
+    <div class="tabela tabela-centralizada">
+      <table class="complexidade-table">
+        <tr>
+          <th>Operação</th>
+          <th>Caso Médio</th>
+          <th>Pior Caso</th>
+        </tr>
+        <tr>
+          <td>Busca</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>Inserção</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>Remoção</td>
+          <td>O(log n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>Travessia</td>
+          <td>O(n)</td>
+          <td>O(n)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5. REPRESENTAÇÕES -->
+  <div class="contexto contexto-espacado">
+    <h2 id="representacoes">Representações de Árvores Binárias</h2>
+    <p>Uma árvore binária pode ser representada de diferentes formas. Considere a BST abaixo como exemplo:</p>
+
+    <div class="highlight-box">
+      <p>Inserindo os valores <b>50, 30, 70, 20, 40, 60, 80</b> nessa ordem em uma BST:</p>
     </div>
 
-    <div id="listaTraverse"></div>
-    <div id="cy_arvore"></div>
-  </section>
-  
+    <!-- Diagrama de nós -->
+    <div class="representacao">
+      <h3>Diagrama de Nós</h3>
+      <p>
+        A representação mais intuitiva é o <b>diagrama em árvore</b>, onde cada nó é desenhado com suas conexões para os filhos esquerdo e direito.
+        A raiz fica no topo e as folhas na base.
+      </p>
+      <div class="lista arvore-diagrama">
+        <pre>
+            50          ← raiz (nível 0)
+           /  \
+         30    70       ← nível 1
+        / \   / \
+       20  40 60  80    ← folhas (nível 2)
+        </pre>
+      </div>
+    </div>
+
+    <!-- Representação em array -->
+    <div class="representacao">
+      <h3>Representação em Array</h3>
+      <p>
+        Uma árvore binária completa pode ser armazenada em um <b>array</b> usando a seguinte convenção de índices:
+      </p>
+      <ul>
+        <li>A <b>raiz</b> fica no índice <b>1</b>.</li>
+        <li>Para um nó no índice <b>i</b>, o filho esquerdo está em <b>2i</b> e o direito em <b>2i + 1</b>.</li>
+        <li>O pai de qualquer nó em índice <b>i</b> está em <b>⌊i / 2⌋</b>.</li>
+      </ul>
+      <p>Para a BST do exemplo:</p>
+      <div class="arvore-array">
+        <div class="arvore-array-cell">
+          <span class="idx">0</span>
+          <div class="val vazio">—</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">1</span>
+          <div class="val">50</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">2</span>
+          <div class="val">30</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">3</span>
+          <div class="val">70</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">4</span>
+          <div class="val">20</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">5</span>
+          <div class="val">40</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">6</span>
+          <div class="val">60</div>
+        </div>
+        <div class="arvore-array-cell">
+          <span class="idx">7</span>
+          <div class="val">80</div>
+        </div>
+      </div>
+      <p class="nota-array">
+        O índice 0 é ignorado para simplificar os cálculos. Perceba: o filho esquerdo de 50 (índice 1) está em 2×1=2 → valor 30. ✓
+      </p>
+    </div>
+
+    <!-- Representação em código -->
+    <div class="representacao">
+      <h3>Representação em Código (Python)</h3>
+      <p>
+        Em linguagens de programação, uma BST é geralmente implementada com uma classe <b>Nó</b> que contém o valor e ponteiros para os filhos:
+      </p>
+      <div class="code-block">
+<span class="kw">class</span> <span class="cls">No</span>:
+    <span class="kw">def</span> <span class="cls">__init__</span>(<span class="kw">self</span>, valor):
+        <span class="kw">self</span>.valor = valor
+        <span class="kw">self</span>.esquerda = <span class="num">None</span>   <span class="cmt"># filho esquerdo (menor)</span>
+        <span class="kw">self</span>.direita  = <span class="num">None</span>   <span class="cmt"># filho direito  (maior)</span>
+
+<span class="kw">class</span> <span class="cls">BST</span>:
+    <span class="kw">def</span> <span class="cls">__init__</span>(<span class="kw">self</span>):
+        <span class="kw">self</span>.raiz = <span class="num">None</span>
+
+    <span class="kw">def</span> <span class="cls">inserir</span>(<span class="kw">self</span>, valor):
+        <span class="kw">if</span> <span class="kw">self</span>.raiz <span class="kw">is</span> <span class="num">None</span>:
+            <span class="kw">self</span>.raiz = <span class="cls">No</span>(valor)
+        <span class="kw">else</span>:
+            <span class="kw">self</span>._inserir_rec(<span class="kw">self</span>.raiz, valor)
+
+    <span class="kw">def</span> <span class="cls">_inserir_rec</span>(<span class="kw">self</span>, no, valor):
+        <span class="kw">if</span> valor &lt; no.valor:            <span class="cmt"># vai para a esquerda</span>
+            <span class="kw">if</span> no.esquerda <span class="kw">is</span> <span class="num">None</span>:
+                no.esquerda = <span class="cls">No</span>(valor)
+            <span class="kw">else</span>:
+                <span class="kw">self</span>._inserir_rec(no.esquerda, valor)
+        <span class="kw">elif</span> valor &gt; no.valor:          <span class="cmt"># vai para a direita</span>
+            <span class="kw">if</span> no.direita <span class="kw">is</span> <span class="num">None</span>:
+                no.direita = <span class="cls">No</span>(valor)
+            <span class="kw">else</span>:
+                <span class="kw">self</span>._inserir_rec(no.direita, valor)
+      </div>
+    </div>
+
+    <!-- Travessias -->
+    <div class="representacao">
+      <h3>Travessias (Traversals)</h3>
+      <p>
+        Uma <b>travessia</b> é o processo de visitar todos os nós de uma árvore em uma ordem específica.
+        As três travessias clássicas diferem apenas em <b>quando o nó atual é processado</b> em relação aos seus filhos:
+      </p>
+
+      <div class="tipos-grid">
+        <div class="tipo-card">
+          <h4>🔵 In-Order (Esq → Nó → Dir)</h4>
+          <p>Visita esquerda, depois o nó, depois direita. Em uma BST, <b>produz os valores em ordem crescente</b>.</p>
+          <p class="resultado-traverse">Resultado: 20, 30, 40, 50, 60, 70, 80</p>
+        </div>
+        <div class="tipo-card">
+          <h4>🟢 Pre-Order (Nó → Esq → Dir)</h4>
+          <p>Visita o nó primeiro, depois esquerda, depois direita. Útil para <b>copiar ou serializar</b> a árvore.</p>
+          <p class="resultado-traverse">Resultado: 50, 30, 20, 40, 70, 60, 80</p>
+        </div>
+        <div class="tipo-card">
+          <h4>🟠 Post-Order (Esq → Dir → Nó)</h4>
+          <p>Visita os filhos antes do nó. Útil para <b>deletar a árvore</b> ou calcular expressões matemáticas.</p>
+          <p class="resultado-traverse">Resultado: 20, 40, 30, 60, 80, 70, 50</p>
+        </div>
+      </div>
+
+      <div class="code-block">
+<span class="cmt"># In-Order: percorre em ordem crescente</span>
+<span class="kw">def</span> <span class="cls">inorder</span>(no):
+    <span class="kw">if</span> no:
+        inorder(no.esquerda)
+        <span class="kw">print</span>(no.valor)
+        inorder(no.direita)
+
+<span class="cmt"># Pre-Order: raiz → esquerda → direita</span>
+<span class="kw">def</span> <span class="cls">preorder</span>(no):
+    <span class="kw">if</span> no:
+        <span class="kw">print</span>(no.valor)
+        preorder(no.esquerda)
+        preorder(no.direita)
+
+<span class="cmt"># Post-Order: esquerda → direita → raiz</span>
+<span class="kw">def</span> <span class="cls">postorder</span>(no):
+    <span class="kw">if</span> no:
+        postorder(no.esquerda)
+        postorder(no.direita)
+        <span class="kw">print</span>(no.valor)
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. SEÇÃO INTERATIVA -->
+  <div class="contexto contexto-espacado">
+    <h2 id="pratica">Árvore Interativa</h2>
+    <p>
+      A seguir você pode <b>construir e explorar uma BST</b> em tempo real.
+      Insira valores numéricos, remova nós e visualize como a árvore se reorganiza.
+      Teste também as três travessias e observe a diferença entre elas!
+    </p>
+  </div>
+
+  <div class="comousar">
+    <h2>Como Usar</h2>
+    <ol>
+      <li>Digite um número no campo <b>Valor</b> e clique em <span class="badge-inserir">➕ Inserir</span> para adicionar à BST.</li>
+      <li>Para remover um nó, informe o valor e clique em <span class="badge-remover">🗑 Remover</span>.</li>
+      <li>Escolha um tipo de travessia e clique em <span class="badge-traverse">🔍 Ver Travessia</span> para ver a sequência de visitação dos nós.</li>
+      <li>Use <span class="badge-atualizar">🔄 Atualizar</span> se precisar recarregar o desenho.</li>
+    </ol>
+  </div>
+
+  <!-- Painel de controles -->
+  <div class="arvore-controles">
+
+    <!-- Linha 1: inserir / remover -->
+    <div class="arvore-controles-linha">
+      <div class="arvore-controles-campo">
+        <label for="valor">Valor</label>
+        <input id="valor" type="number" placeholder="ex: 42" class="arvore-input" />
+      </div>
+      <button id="btnInserir" class="btn-inserir">➕ Inserir</button>
+      <button id="btnRemover" class="btn-remover">🗑 Remover</button>
+    </div>
+
+    <!-- Linha 2: travessia -->
+    <div class="arvore-controles-linha">
+      <div class="arvore-controles-campo">
+        <label for="tipoTraverse">Tipo de Travessia</label>
+        <select id="tipoTraverse">
+          <option value="inorder">In-Order (Esq → Nó → Dir)</option>
+          <option value="preorder">Pre-Order (Nó → Esq → Dir)</option>
+          <option value="postorder">Post-Order (Esq → Dir → Nó)</option>
+        </select>
+      </div>
+      <button id="btnVerTraverse" class="btn-traverse">🔍 Ver Travessia</button>
+      <button id="btnAtualizar" class="btn-atualizar">🔄 Atualizar</button>
+    </div>
+
+    <!-- Resultado da travessia -->
+    <div id="listaTraverse" class="traverse-resultado"></div>
+
+  </div>
+
+  <div id="cy_arvore"></div>
+
+</section>
+
 <footer>
   <p>
-    Projeto acadêmico desenvolvido para a disciplina de <strong>Estruturas de Dados 2</strong> do curso de <strong>Sistemas de Informação</strong> no <br> <strong>Centro Universitário para o Desenvolvimento do Alto Vale do Itajaí (UNIDAVI)</strong>.
+    Projeto acadêmico desenvolvido para a disciplina de <strong>Estruturas de Dados 2</strong> do curso de <strong>Sistemas de Informação</strong> no <br>
+    <strong>Centro Universitário para o Desenvolvimento do Alto Vale do Itajaí (UNIDAVI)</strong>.
   </p>
   <p>
-    Desenvolvido por 
-    <a href="https://github.com/Johannmk1" target="_blank">Johann Malkowski</a> e 
+    Desenvolvido por
+    <a href="https://github.com/Johannmk1" target="_blank">Johann Malkowski</a> e
     <a href="https://github.com/Raissa-SM" target="_blank">Raíssa Sofka Mazzi</a>. &copy; 2025
   </p>
   <p>
-    Repositório do projeto: 
+    Repositório do projeto:
     <a href="https://github.com/Johannmk1/ProjetoGrafos" target="_blank">ProjetoGrafos no GitHub</a>
   </p>
 </footer>
 
-
 <script src="/static/script.js"></script>
+<script>
+  // Sobrescreve o handler do btnVerTraverse definido em script.js
+  // para usar formatação mais rica no resultado da travessia
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('btnVerTraverse');
+    if (!btn) return;
+
+    // Remove listeners anteriores clonando o botão
+    const clone = btn.cloneNode(true);
+    btn.parentNode.replaceChild(clone, btn);
+
+    clone.addEventListener('click', () => {
+      const tipo = document.getElementById('tipoTraverse').value;
+      fetch(`/arvore/traverse?tipo=${tipo}`)
+        .then(r => r.json())
+        .then(j => {
+          const out = document.getElementById('listaTraverse');
+          if (!out) return;
+          const nomes = { inorder: 'In-Order', preorder: 'Pre-Order', postorder: 'Post-Order' };
+          const lista = (j.lista || []).join(' → ');
+          out.innerHTML = `<b>${nomes[tipo]}:</b> ${lista || '(árvore vazia)'}`;
+          out.style.display = 'block';
+        });
+    });
+  });
+</script>
 </body>
 </html>
